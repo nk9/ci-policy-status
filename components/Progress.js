@@ -4,19 +4,29 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Connector from './Connector';
 import IconButton from '@mui/material/IconButton';
+import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
+import Radio from '@mui/material/Radio';
 
 import FlagCircleIcon from '@mui/icons-material/FlagCircle';
+import FlagCircleOutlinedIcon from '@mui/icons-material/FlagCircleOutlined';
+
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
+
+import CircleIcon from '@mui/icons-material/Circle';
 import TripOriginIcon from '@mui/icons-material/TripOrigin';
 
 
 export default function Progress({policies, policy_id}) {
 	const [description, setDescription] = React.useState("")
+	const [value, setValue] = React.useState('');
+
 	const steps = policies[policy_id]
 	var items = []
 
-	function showStepDetail(step) {
-		setDescription(step.description)
+	function showStepDetail(event) {
+		const i = parseInt(event.target.value)
+		setDescription(steps[i].description)
 	}
 
 	for (const [i, step] of steps.entries()) {
@@ -24,7 +34,7 @@ export default function Progress({policies, policy_id}) {
 		React.useEffect(() => {
 			// Set the detail to show the last complete step
 			if (step.complete) {
-				showStepDetail(step);
+				setDescription(step.description)
 			}
 		}, [])
 
@@ -34,27 +44,44 @@ export default function Progress({policies, policy_id}) {
 
 		if (i == 0) {
 			items.push(
-				<IconButton color="black" onClick={() => {showStepDetail(step)}}>
-					<FlagCircleIcon fontSize="large" />
-				</IconButton>)
+				<Radio
+					sx={{color: "black"}}
+					size="large"
+					value={i}
+					icon={<FlagCircleIcon />}
+					checkedIcon={<FlagCircleOutlinedIcon />} />
+				)
 		} else if (step.complete) {
 			items.push(
-				<IconButton color="black" onClick={() => {showStepDetail(step)}}>
-					<CheckCircleIcon fontSize="large" />
-				</IconButton>)
+				<Radio
+					sx={{color: "black"}}
+					size="large"
+					value={i}
+					icon={<CheckCircleIcon />}
+					checkedIcon={<CheckCircleOutlinedIcon />} />
+				)
 		} else {
 			items.push(
-				<IconButton color="black" onClick={() => {showStepDetail(step)}}>
-					<TripOriginIcon fontSize="large" />
-				</IconButton>)
+				<Radio
+					sx={{color: "black"}}
+					size="large"
+					value={i}
+					icon={<CircleIcon fontSize="large" />}
+					checkedIcon={<TripOriginIcon fontSize="large" />} />
+				)
 		}
 	}
 
 	return (
 		<Stack spacing={2}>
-			<Stack spacing={0} direction="row" alignItems="center">
-				{items}
-	        </Stack>
+			<RadioGroup
+				name={policy_id}
+				value={value}
+				onChange={showStepDetail}>
+				<Stack spacing={0} direction="row" alignItems="center">
+					{items}
+		        </Stack>
+	        </RadioGroup>
 	        <Box sx={{
 	        	padding: "1rem",
 	        	backgroundColor: '#eee'
