@@ -1,9 +1,11 @@
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Connector from './Connector';
+import IconButton from '@mui/material/IconButton';
 
-import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
+import FlagCircleIcon from '@mui/icons-material/FlagCircle';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import TripOriginIcon from '@mui/icons-material/TripOrigin';
 
 
 export default function Progress({steps}) {
@@ -11,24 +13,34 @@ export default function Progress({steps}) {
 
 	for (const [i, step] of steps.entries()) {
 		if (i != 0) {
-			items.push(<Connector complete={step.complete} />)
+			items.push(<Connector step={step} />)
 		}
 
-		if (step.complete) {
-			items.push(<CheckCircleIcon />)
+		if (i == 0) {
+			items.push(
+				<IconButton color="black" onClick={() => {showStepDetail(step)}}>
+					<FlagCircleIcon fontSize="large" />
+				</IconButton>)
+		} else if (step.complete) {
+			items.push(
+				<IconButton color="black" onClick={() => {showStepDetail(step)}}>
+					<CheckCircleIcon fontSize="large" />
+				</IconButton>)
 		} else {
-			items.push(<CircleOutlinedIcon />)
+			items.push(
+				<IconButton color="black" onClick={() => {showStepDetail(step)}}>
+					<TripOriginIcon fontSize="large" />
+				</IconButton>)
 		}
 	}
 
 	return (
 		<Stack spacing={0} direction="row" alignItems="center">
 			{items}
-{/*          <CheckCircleIcon />
-          <Connector complete={true} />
-          <CircleOutlinedIcon />
-          <Connector />
-          <CircleOutlinedIcon />
-*/}        </Stack>
+        </Stack>
 	)
+}
+
+function showStepDetail(step) {
+	alert(step.name)
 }

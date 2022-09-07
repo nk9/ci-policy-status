@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 
-export default function Connector({complete}) {
-	var color = complete ? "green" : "lightgray"
+export default function Connector({step}) {
+	var color = step.complete ? "green" : "lightgray"
 
 	return <Box
 			sx={{
