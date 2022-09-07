@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Link from '../src/Link';
 import Progress from '../components/Progress';
 
-const steps = [{name: "a", complete: true}, {name: "b", complete: true}, {name: "c", complete: false}]
+import policies from '../public/static/policies.json';
 
 export default function Index() {
   return (
@@ -20,7 +20,7 @@ export default function Index() {
         </Link>
       </Box>
       <Box sx={{my: 4}}>
-        <Progress steps={steps} />
+        <Progress steps={policies["people_friendly_streets"]} />
       </Box>
     </Container>
   );
