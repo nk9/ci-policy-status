@@ -37,21 +37,25 @@ export default function Progress({policies, policy_id}) {
 		}, [])
 
 		items.push(
-			<ProgressContext.Provider value={{step_index: i, steps: steps}}>
-				<Step key={i} completed={step.complete}>
-					<StepButton color="inherit" onClick={() => handleStep(i)}>
-						<StepLabel StepIconComponent={CIStepIcon}></StepLabel>
-					</StepButton>
-				</Step>
-	        </ProgressContext.Provider>
+			<Step key={i} completed={step.complete}>
+				<StepButton color="inherit" onClick={() => handleStep(i)}>
+					<StepLabel StepIconComponent={CIStepIcon}></StepLabel>
+				</StepButton>
+			</Step>
 		)
 	}
 
+	let stepper_width = (steps.length > 2) ? "100%" : "41%"; // Determined by eye
+
 	return (
 		<Stack spacing={2}>
-			<Stepper nonLinear activeStep={activeStep}>
-				{items}
-			</Stepper>
+			<ProgressContext.Provider value={{steps}}>
+	            <Box sx={{maxWidth: stepper_width}}>
+					<Stepper nonLinear activeStep={activeStep}>
+						{items}
+					</Stepper>
+				</Box>
+	        </ProgressContext.Provider>
 	        <Box sx={{
 	        	padding: "1rem",
 	        	backgroundColor: '#eee'

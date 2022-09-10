@@ -42,9 +42,9 @@ const CIStepIconRoot = styled('div')(({ theme, ownerState }) => ({
 }));
 
 function CIStepIcon(props) {
-	const {step_index, steps} = useContext(ProgressContext);
-
-	const { active, completed, className } = props;
+  const { active, completed, icon: step_num, className } = props;
+	const steps = useContext(ProgressContext);
+  const step_index = step_num - 1;
 	var icon, color;
 
 	// Choose color
