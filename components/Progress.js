@@ -3,16 +3,16 @@ import React from "react";
 import CIConnector from './CIConnector';
 import CIStepIcon from './CIStepIcon';
 
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
-import RadioGroup, { useRadioGroup } from "@mui/material/RadioGroup";
-import Radio from '@mui/material/Radio';
+import {
+	Box,
+	Stack,
+	Step,
+	Stepper,
+	StepButton,
+	StepLabel
+} from "@mui/material";
 
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepButton from '@mui/material/StepButton';
-import StepLabel from '@mui/material/StepLabel';
+export const ProgressContext = React.createContext();
 
 
 export default function Progress({policies, policy_id}) {
@@ -37,17 +37,19 @@ export default function Progress({policies, policy_id}) {
 		}, [])
 
 		items.push(
-			<Step key={i} completed={step.complete}>
-				<StepButton color="inherit" onClick={() => handleStep(i)}>
-					<StepLabel StepIconComponent={CIStepIcon}></StepLabel>
-				</StepButton>
-			</Step>
+			<ProgressContext.Provider value={{step_index: i, steps: steps}}>
+				<Step key={i} completed={step.complete}>
+					<StepButton color="inherit" onClick={() => handleStep(i)}>
+						<StepLabel StepIconComponent={CIStepIcon}></StepLabel>
+					</StepButton>
+				</Step>
+	        </ProgressContext.Provider>
 		)
 	}
 
 	return (
 		<Stack spacing={2}>
-			<Stepper nonLinear activeStep={activeStep} connector={<CIConnector />}>
+			<Stepper nonLinear activeStep={activeStep}>
 				{items}
 			</Stepper>
 	        <Box sx={{

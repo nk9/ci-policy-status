@@ -1,56 +1,72 @@
 import { styled } from '@mui/material/styles';
-import Check from '@mui/icons-material/Check';
+import { useContext } from 'react';
+import { ProgressContext } from "./Progress";
 
 import FlagIcon from '@mui/icons-material/Flag';
 import FlagCircleOutlinedIcon from '@mui/icons-material/FlagCircleOutlined';
+import FlagCircleIcon from '@mui/icons-material/FlagCircle';
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 
 import CircleIcon from '@mui/icons-material/Circle';
-import TripOriginIcon from '@mui/icons-material/TripOrigin';
 
 const CIStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
   display: 'flex',
   height: 22,
   alignItems: 'center',
-  ...(ownerState.active && {
-    color: '#784af4',
-  }),
+  
+  '& .CIStepIcon-startIcon': {
+  	fontSize: 24,
+    ...(ownerState.completed && {
+      color: ownerState.color,
+    }),
+  },
   '& .CIStepIcon-completedIcon': {
     zIndex: 1,
-    fontSize: 18,
+    fontSize: 24,
+    ...(ownerState.completed && {
+      color: ownerState.color,
+    }),
   },
   '& .CIStepIcon-circle': {
-    width: 18,
-    height: 18,
+    width: 20,
+    height: 20,
     borderRadius: '50%',
     backgroundColor: 'currentColor',
+    ...(ownerState.completed && {
+      backgroundColor: ownerState.color,
+    }),
   },
 }));
 
 function CIStepIcon(props) {
-	const { active, completed, icon: step_num, className } = props;
-	var icon;
-	// console.log(step_num)
+	const {step_index, steps} = useContext(ProgressContext);
 
-	// const icons = {
-	// 	1: <FlagIcon />,
-	// 	2: <Check />,
-	// 	3: <CircleIcon />,
-	// };
+	const { active, completed, className } = props;
+	var icon, color;
 
-	if (step_num == 1) {
-		icon = <FlagIcon />;
+	// Choose color
+	var colors = ["black", "red", "orange", "green"]
+
+	if (steps.length == 2) {
+		colors = ["black", "green"];
+	}
+
+	color = colors[step_index]
+
+	// Choose icon
+	if (step_index == 0) {
+		icon = <FlagCircleIcon className="CIStepIcon-startIcon" />;
 	} else if (completed) {
-		icon = <Check className="CIStepIcon-completedIcon" />
+		icon = <CheckCircleIcon className="CIStepIcon-completedIcon" />
 	} else {
-		icon = <div className="CIStepIcon-circle" />
+		icon = <CircleIcon className="CIStepIcon-circle" />
 	}
 
   return (
-    <CIStepIconRoot ownerState={{ completed, active }} className={className}>
+    <CIStepIconRoot ownerState={{ completed, active, color }} className={className}>
       {icon}
     </CIStepIconRoot>
   );
