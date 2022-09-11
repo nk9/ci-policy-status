@@ -10,6 +10,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 
 import CircleIcon from '@mui/icons-material/Circle';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 const CIStepIconRoot = styled('div')(({ theme, ownerState }) => ({
   color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
@@ -30,15 +31,22 @@ const CIStepIconRoot = styled('div')(({ theme, ownerState }) => ({
       color: ownerState.color,
     }),
   },
-  '& .CIStepIcon-circle': {
-    width: 20,
-    height: 20,
-    borderRadius: '50%',
-    backgroundColor: 'currentColor',
+  '& .CIStepIcon-circleIcon': {
+    zIndex: 1,
+    fontSize: 24,
     ...(ownerState.completed && {
-      backgroundColor: ownerState.color,
+      color: ownerState.color,
     }),
-  },
+  }
+}));
+
+const CIStepIconActiveMarker = styled('div')(({theme, ownerState}) => ({
+  position: 'absolute',
+  bottom: 0,
+  ...((!ownerState.active) && {
+    display: "none",
+    transform: "rotate(90deg)"
+  })
 }));
 
 function CIStepIcon(props) {
@@ -62,13 +70,18 @@ function CIStepIcon(props) {
 	} else if (completed) {
 		icon = <CheckCircleIcon className="CIStepIcon-completedIcon" />
 	} else {
-		icon = <CircleIcon className="CIStepIcon-circle" />
+		icon = <CircleIcon className="CIStepIcon-circleIcon" />
 	}
 
   return (
+    <>
     <CIStepIconRoot ownerState={{ completed, active, color }} className={className}>
       {icon}
     </CIStepIconRoot>
+    <CIStepIconActiveMarker ownerState={{ active }}>
+      <ArrowDropUpIcon />
+    </CIStepIconActiveMarker>
+    </>
   );
 }
 
