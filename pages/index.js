@@ -1,13 +1,18 @@
 import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
+
+import Image from 'next/image';
+
 import Link from '../src/Link';
 import Progress from '../components/Progress';
-import Grid from '@mui/material/Grid';
-import Divider from '@mui/material/Divider';
 
+import {
+  Box,
+  Container,
+  Stack,
+  Typography,
+  Grid,
+  Divider
+} from "@mui/material";
 
 import policies from '../public/static/policies.json';
 
@@ -26,7 +31,40 @@ export default function Index() {
         <p>We are tracking the council's progress toward this commitment. Here is our citizen assessment
         of their progress so far.</p>
       </Box>
+
+      <Divider />
+
       <Box sx={{my: 4}}>
+        <Image src="/static/images/sustainable-modal-share.jpg" layout="intrinsic" width="900" height="200" alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
+        <Typography variant="h4" gutterBottom>
+          Sustainable Transport Modal Share
+        </Typography>
+        <Grid container spacing={2}>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h5">
+              Target Date
+            </Typography>
+            <Progress policies={policies} policy_id="modal_share_date" />
+            <Divider sx={{my: 2}} />
+            <Typography variant="h5">
+              Modal Share
+            </Typography>
+            <Progress policies={policies} policy_id="modal_share_stats" />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <p>We have asked the elected council to bring forward the target date for reaching 90% sustainable
+            transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to
+            increase the sustainable modal share”.</p>
+
+            <p>We assess their commitment according to two indicators.</p>
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Divider />
+
+      <Box sx={{my: 4}}>
+        <Image src="/static/images/LTNs.jpg" layout="intrinsic" width="900" height="200" alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
         <Typography variant="h4" gutterBottom>
           People Friendly Streets
         </Typography>
@@ -48,6 +86,7 @@ export default function Index() {
       <Divider />
 
       <Box sx={{my: 4}}>
+        <Image src="/static/images/pedal-me.jpg" layout="intrinsic" width="900" height="200" alt="An electric cargo bike with a trailer moving a large load." />
         <Typography variant="h4" gutterBottom>
           Cycle Logistics
         </Typography>
@@ -85,10 +124,10 @@ export default function Index() {
             <Progress policies={policies} policy_id="parking_availability" />
           </Grid>
           <Grid item xs={12} md={6}>
-            <p>Islington’s policy on cycle parking is one of the worst accross London in terms of price and
-            availability. We have asked the Council to deliver secure, affordable, and flexible bike parking
-            and ensure that it is never cheaper to park a car or van than to park a cycle. They have pledged
-            to <em>“work to make cycle parking more affordable”.</em></p>
+            <p>Many London boroughs have better policies than Islington on secure, on-street cycle parking. The
+            key problems are price and availability. We have asked the Council to deliver secure, affordable,
+            and flexible bike parking and ensure that it is never cheaper to park a car or van than to park a
+            cycle. They have pledged to <em>“work to make cycle parking more affordable”.</em> [LINK NEEDED]</p>
 
             <p>We assess their commitment according to the cost for users and the availability.</p>
           </Grid>

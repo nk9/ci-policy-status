@@ -69,10 +69,10 @@ export default function Progress({policies, policy_id}) {
 	        </ProgressContext.Provider>
 	        <Box sx={{
 	        	padding: "1rem",
-	        	backgroundColor: '#eee'
+	        	backgroundColor: '#ddd'
 	        }}>
 	        	<div>{description}</div>
-	        	<div>Date: {date}</div>
+	        	<div><strong>Date:</strong> {date}</div>
         	</Box>
         </Stack>
 	)

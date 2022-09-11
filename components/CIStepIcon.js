@@ -13,7 +13,7 @@ import CircleIcon from '@mui/icons-material/Circle';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
 const CIStepIconRoot = styled('div')(({ theme, ownerState }) => ({
-  color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
+  color: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ddd',
   display: 'flex',
   height: 22,
   alignItems: 'center',
