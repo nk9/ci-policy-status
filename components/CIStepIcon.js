@@ -45,7 +45,6 @@ const CIStepIconActiveMarker = styled('div')(({theme, ownerState}) => ({
   bottom: 0,
   ...((!ownerState.active) && {
     display: "none",
-    transform: "rotate(90deg)"
   })
 }));
 

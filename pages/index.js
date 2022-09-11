@@ -74,12 +74,12 @@ export default function Index() {
         </Typography>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Typography variant="h6">
+            <Typography variant="h5">
               Cost
             </Typography>
             <Progress policies={policies} policy_id="parking_cost" />
             <Divider sx={{my: 2}} />
-            <Typography variant="h6">
+            <Typography variant="h5">
               Availability
             </Typography>
             <Progress policies={policies} policy_id="parking_availability" />

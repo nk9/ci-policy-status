@@ -18,13 +18,24 @@ export const ProgressContext = React.createContext();
 export default function Progress({policies, policy_id}) {
 	const [activeStep, setActiveStep] = React.useState(0)
 	const [description, setDescription] = React.useState("")
+	const [date, setDate] = React.useState("")
 
 	const steps = policies[policy_id]
 	var items = []
 
 	function handleStep(step_index) {
+		const step = steps[step_index];
+
 		setActiveStep(step_index);
-		setDescription(steps[step_index].description)
+		setDescription(step.description)
+
+		if (step.complete && step.completed_date) {
+			var mydate = new Date(step.completed_date);
+			let date_str = mydate.toLocaleDateString('en-gb', {  month:"short", year:"numeric"}) 
+			setDate(<em>{date_str}</em>)
+		} else {
+			setDate(<em>TBD</em>)
+		}
 	}
 
 	for (const [i, step] of steps.entries()) {
@@ -61,6 +72,7 @@ export default function Progress({policies, policy_id}) {
 	        	backgroundColor: '#eee'
 	        }}>
 	        	<div>{description}</div>
+	        	<div>Date: {date}</div>
         	</Box>
         </Stack>
 	)
