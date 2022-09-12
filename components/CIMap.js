@@ -38,7 +38,7 @@ export default function CIMap({props}) {
             latitude: 51.545553,
             zoom: 11.5
           }}
-          style={{width: 600, height: 400}}
+          style={{width: "100%", height: 400}}
           mapStyle="mapbox://styles/nkocharh/cjt18tus00ly51fmu051jdav4"
           mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
         >
