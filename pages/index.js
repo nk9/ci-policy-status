@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import Link from '../src/Link';
 import Progress from '../components/Progress';
+import CIMap from '../components/CIMap';
 
 import {
   Box,
@@ -142,17 +143,18 @@ export default function Index() {
         </Typography>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Progress policies={policies} policy_id="logistics" />
+            <Progress policies={policies} policy_id="cycle_tracks" />
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="body1">We have asked the council to install protected cycle routes on all busy roads in the borough by 2026.
-            They pledged to “build on the LTNs and 3 segregated cycle routes installed in the past two years.”</Typography>
+            They pledged to “build on the LTNs and 3 segregated cycle routes installed in the past two years.” [NOTE: is this correct?]</Typography>
 
             <Typography variant="body1" mt={2}>We are following-up the building of these routes, according to the authority in charge (TfL or the borough).</Typography>
 
             <Typography variant="body1" mt={2}><strong>TODO map</strong></Typography>
           </Grid>
         </Grid>
+        <CIMap />
       </Box>
 
     </Container>
