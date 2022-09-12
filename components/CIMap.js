@@ -16,8 +16,19 @@ export default function CIMap({props}) {
         'id': 'protectedSegmentLayer',
         'type': 'line',
         'paint': {
-            'line-color': "#00f",
-            'line-width': 2
+            'line-width': 2,
+
+            // Show single-sided segments as dashed
+            'line-dasharray': ["case", ["==", ["get", "bidi"], 0],
+                ["literal", [1,1]],
+                ["literal", [1]]
+            ],
+
+            // Show TfL segments as blue
+            'line-color': ["case", ["==", ["get", "tfl"], 0],
+                "#13941A",
+                "#763D0F"
+            ]
         }
     }
     return (
