@@ -1,45 +1,41 @@
-# Next.js example
+# CI Policy Observatory
 
 ## How to use
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+1. Make sure you have Node and npm installed. The modern way is to install [asdf](https://asdf-vm.com/) for tool management, and then the latest version of Node and npm. See [full instructions](https://codechips.me/nodejs-guide-asdf/).
+    
+  ```sh
+  asdf plugin add nodejs
+  asdf install nodejs latest 
+  ```
 
-<!-- #default-branch-switch -->
+
+2. Clone the repo:
 
 ```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs
-cd nextjs
+git clone https://github.com/nk9/ci-policy-status.git
+cd ci-policy-status
 ```
 
-Install it and run:
+
+3. Create a .env.local file by copying the .env.local.template file into place and adding the Mapbox token. (Get it from Nick.)
+
+4. Install it and run:
 
 ```sh
 npm install
 npm run dev
 ```
 
-or:
+5. Open a browser to http://localhost:3000 (or whichever link is described in Terminal).
 
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/nextjs)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/nextjs)
-
-## The idea behind the example
+## Details
 
 The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5.
-If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
+It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5. Learn more about [Material UI](https://mui.com).
+For maps, we're using [Mapbox GL GS](https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/) and [react-map-gl](https://github.com/visgl/react-map-gl).
 
 ## The link component
 
 The [example folder](https://github.com/mui/material-ui/tree/HEAD/examples/nextjs-with-typescript) provides an adapter for the use of [Next.js's Link component](https://nextjs.org/docs/api-reference/next/link) with MUI.
 More information [in the documentation](https://mui.com/material-ui/guides/routing/#next-js).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/material-ui/getting-started/templates/) section.
