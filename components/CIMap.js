@@ -1,4 +1,6 @@
-import Map, {Source, Layer} from 'react-map-gl';
+import React from "react";
+
+import Map, {Popup, Source, Layer} from 'react-map-gl';
 
 import boundaries from '../public/static/gis/islington-ward-boundaries.json'
 import protectedSegments from '../public/static/gis/protected-segments.json'
@@ -31,6 +33,19 @@ export default function CIMap({props}) {
             ]
         }
     }
+
+    const [hoverInfo, setHoverInfo] = React.useState(null);
+
+    const onHover = React.useCallback(event => {
+        const segment = event.features && event.features[0];
+        setHoverInfo({
+          longitude: event.lngLat.lng,
+          latitude: event.lngLat.lat,
+          roadName: segment && segment.properties.road
+        });
+    }, []);
+    const selectedSegment = (hoverInfo && hoverInfo.roadName) || '';
+
     return (
         <Map
           initialViewState={{
@@ -41,6 +56,8 @@ export default function CIMap({props}) {
           style={{width: "100%", height: 400}}
           mapStyle="mapbox://styles/nkocharh/cjt18tus00ly51fmu051jdav4"
           mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
+          onMouseMove={onHover}
+          interactiveLayerIds={['protectedSegmentLayer']}
         >
           <Source type="geojson" data={boundaries}>
             <Layer {...boundaryStyle} />
@@ -48,6 +65,17 @@ export default function CIMap({props}) {
           <Source type="geojson" data={protectedSegments}>
             <Layer {...protectedSegmentStyle} />
           </Source>
+
+          {selectedSegment && (
+              <Popup
+                longitude={hoverInfo.longitude}
+                latitude={hoverInfo.latitude}
+                offset={[0, -10]}
+                closeButton={false}
+              >
+                {selectedSegment}
+              </Popup>
+            )}
         </Map>
         )
 }
