@@ -83,7 +83,6 @@ export default function CIMap({props}) {
               <Popup
                 longitude={hoverInfo.longitude}
                 latitude={hoverInfo.latitude}
-                offset={[0, -10]}
                 closeButton={false}
               >
                 <dl>
