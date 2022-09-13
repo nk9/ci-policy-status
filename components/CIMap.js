@@ -2,6 +2,7 @@ import React from "react";
 
 import Map, {Popup, Source, Layer} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import lineLength from '@turf/length';
 
 import boundaries from '../public/static/gis/islington-ward-boundaries.json'
 import protectedSegments from '../public/static/gis/protected-segments.json'
@@ -39,15 +40,24 @@ export default function CIMap({props}) {
 
     const onHover = React.useCallback(event => {
         const segment = event.features && event.features[0];
+        const meters = (segment && lineLength(segment) * 1000) || 0;
+        var length = meters;
+
+        if (segment && segment.properties.bidi) {
+            length = meters * 2;
+        }
+
         setHoverInfo({
           longitude: event.lngLat.lng,
           latitude: event.lngLat.lat,
           roadName: segment && segment.properties.road,
           isTfL: segment && segment.properties.tfl == 1,
-          isBiDi: segment && segment.properties.bidi == 1
+          isBiDi: segment && segment.properties.bidi == 1,
+          length: length
         });
     }, []);
     const selectedSegment = (hoverInfo && hoverInfo.roadName) || '';
+
 
     return (
         <Map
@@ -80,6 +90,7 @@ export default function CIMap({props}) {
                 <dt>Road</dt><dd>{selectedSegment}</dd>
                 <dt>Owner</dt><dd>{hoverInfo.isTfL ? "TfL" : "Council"}</dd>
                 <dt>Bidirectional</dt><dd>{hoverInfo.isBiDi ? "Yes" : "No"}</dd>
+                <dt>Lane meters</dt><dd>{hoverInfo.length.toFixed()}m</dd>
                 </dl>
               </Popup>
             )}
