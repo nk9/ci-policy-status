@@ -4,8 +4,8 @@ import Map, {Popup, Source, Layer} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import lineLength from '@turf/length';
 
-import boundaries from '../public/static/gis/islington-ward-boundaries.json'
-import protectedSegments from '../public/static/gis/protected-segments.json'
+import boundaries from '../public/static/gis/islington-ward-boundaries.geojson'
+import protectedSegments from '../public/static/gis/protected-segments.geojson'
 
 export default function CIMap({props}) {
     const boundaryStyle = {
