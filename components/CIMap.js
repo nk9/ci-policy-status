@@ -1,6 +1,7 @@
 import React from "react";
 
 import Map, {Popup, Source, Layer} from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 import boundaries from '../public/static/gis/islington-ward-boundaries.json'
 import protectedSegments from '../public/static/gis/protected-segments.json'
@@ -80,7 +81,6 @@ export default function CIMap({props}) {
                 <dt>Owner</dt><dd>{hoverInfo.isTfL ? "TfL" : "Council"}</dd>
                 <dt>Bidirectional</dt><dd>{hoverInfo.isBiDi ? "Yes" : "No"}</dd>
                 </dl>
-
               </Popup>
             )}
         </Map>
