@@ -18,7 +18,7 @@ export default function CIMap({props}) {
         'id': 'protectedSegmentLayer',
         'type': 'line',
         'paint': {
-            'line-width': 2,
+            'line-width': 4,
 
             // Show single-sided segments as dashed
             'line-dasharray': ["case", ["==", ["get", "bidi"], 0],
@@ -26,10 +26,10 @@ export default function CIMap({props}) {
                 ["literal", [1]]
             ],
 
-            // Show TfL segments as blue
+            // Show TfL segments as a different color
             'line-color': ["case", ["==", ["get", "tfl"], 0],
                 "#13941A",
-                "#763D0F"
+                "#AE08BD"
             ]
         }
     }
@@ -41,7 +41,9 @@ export default function CIMap({props}) {
         setHoverInfo({
           longitude: event.lngLat.lng,
           latitude: event.lngLat.lat,
-          roadName: segment && segment.properties.road
+          roadName: segment && segment.properties.road,
+          isTfL: segment && segment.properties.tfl == 1,
+          isBiDi: segment && segment.properties.bidi == 1
         });
     }, []);
     const selectedSegment = (hoverInfo && hoverInfo.roadName) || '';
@@ -73,7 +75,12 @@ export default function CIMap({props}) {
                 offset={[0, -10]}
                 closeButton={false}
               >
-                {selectedSegment}
+                <dl>
+                <dt>Road</dt><dd>{selectedSegment}</dd>
+                <dt>Owner</dt><dd>{hoverInfo.isTfL ? "TfL" : "Council"}</dd>
+                <dt>Bidirectional</dt><dd>{hoverInfo.isBiDi ? "Yes" : "No"}</dd>
+                </dl>
+
               </Popup>
             )}
         </Map>
