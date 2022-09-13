@@ -33,9 +33,7 @@ export default function Index() {
         of their progress so far.</Typography>
       </Box>
 
-      <Divider />
-
-      <Box sx={{my: 4}}>
+      <Box sx={{my: 4, mt: 15}}>
         <Image src="/static/images/sustainable-modal-share.jpg" layout="intrinsic" width="900" height="200" alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
         <Typography variant="h4" gutterBottom>
           Sustainable Transport Modal Share
@@ -62,9 +60,7 @@ export default function Index() {
         </Grid>
       </Box>
 
-      <Divider />
-
-      <Box sx={{my: 4}}>
+      <Box sx={{my: 4, mt: 15}}>
         <Image src="/static/images/LTNs.jpg" layout="intrinsic" width="900" height="200" alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
         <Typography variant="h4" gutterBottom>
           People Friendly Streets
@@ -84,9 +80,7 @@ export default function Index() {
         </Grid>
       </Box>
 
-      <Divider />
-
-      <Box sx={{my: 4}}>
+      <Box sx={{my: 4, mt: 15}}>
         <Image src="/static/images/pedal-me.jpg" layout="intrinsic" width="900" height="200" alt="An electric cargo bike with a trailer moving a large load." />
         <Typography variant="h4" gutterBottom>
           Cycle Logistics
@@ -106,9 +100,7 @@ export default function Index() {
         </Grid>
       </Box>
 
-      <Divider />
-
-      <Box sx={{my: 4}}>
+      <Box sx={{my: 4, mt: 10}}>
         <Typography variant="h4" gutterBottom>
           Secure Cycle Parking
         </Typography>
@@ -135,9 +127,8 @@ export default function Index() {
         </Grid>
       </Box>
 
-      <Divider />
 
-      <Box sx={{my: 4}}>
+      <Box sx={{my: 4, mt: 10}}>
         <Typography variant="h4" gutterBottom>
           Cycle Tracks on Main Roads
         </Typography>
