@@ -26,8 +26,9 @@ export default function Index() {
         </Typography>
         <Typography variant="body1">In the 2022 election, Cycle Islington chose five policy priorities, our <Link href="https://cycleislington.uk/2021/five-asks-election-2022/" color="secondary">Five Asks</Link>,
         to help ensure that whichever party was elected would accelerate the borough's transition to a
-        low-carbon future. Islington Labour pledged to make Islington a cyling-friendly borough in their
-        election manifesto. [Link? and we should use whatever wording they did.]</Typography>
+        low-carbon future. In their <Link href="https://www.islington-labour.org.uk/2022-manifesto/" color="secondary">election manifesto</Link>,
+        Islington Labour pledged to ensure that "local people can get on their bike and get cycling safely around Islington."
+        </Typography>
 
         <Typography variant="body1" mt={2}>We are tracking the council's progress toward this commitment. Here is our citizen assessment
         of their progress so far.</Typography>
@@ -35,7 +36,7 @@ export default function Index() {
 
       <Box sx={{my: 4, mt: 15}}>
         <Image src="/static/images/sustainable-modal-share.jpg" layout="intrinsic" width="900" height="200" alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h3" align="center" gutterBottom>
           Sustainable Transport Modal Share
         </Typography>
         <Grid container spacing={2}>
@@ -70,10 +71,10 @@ export default function Index() {
             <Progress policies={policies} policy_id="ltns" />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography variant="body1">We have asked the council to cover the borough with “no-through traffic area” (Low-Traffic
+            <Typography variant="body1">We have asked the council to cover the borough with “no-through traffic areas” (Low-Traffic
             Neighbourhoods) to cover the borough by 2024. They said they are “committed to … creating
             liveable neighbourhoods across the borough including with people friendly pavements and more
-            greening”. [Link needed]</Typography>
+            greening”. (Manifesto page 23)</Typography>
 
             <Typography variant="body1" mt={2}>We assess their commitment according to the actual surface of the borough covered by LTNs.</Typography>
           </Grid>
