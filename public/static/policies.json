@@ -1,1 +1,151 @@
-{"ltns":[{"name":"Status quo","description":"Status quo","complete":true,"completed_date":"2022-05-05"},{"name":"Barnsbury & Mildmay","description":"The Barnsbury and Mildmay LTNs have been delivered","complete":true,"completed_date":"2022-06-05"},{"name":"More LTNs","description":"Further LTNs have been delivered","complete":true,"completed_date":"2022-07-20"},{"name":"Complete","description":"All Islington neighbourhoods have LTNs","complete":true,"completed_date":"2022-09-05"}],"logistics":[{"name":"Status quo","description":"Status quo","complete":true,"completed_date":"2022-05-05"},{"name":"Plan","description":"A cycle logistics plan has been approved","complete":false},{"name":"5+","description":"5+ hubs have been created","complete":false},{"name":"10+","description":"10+ hubs have been created","complete":false}],"modal_share_date":[{"description":"Status quo","complete":true,"completed_date":"2022-05-05"},{"description":"The goal of an earlier target date is being advocated by some councillors. [???]","complete":false,"completed_date":null},{"description":"Target date brought forward from 2041","complete":false,"completed_date":null},{"description":"Target date brought forward to 2030 at the latest","complete":false,"completed_date":null}],"modal_share_stats":[{"description":"Sustainable modal share is declining","complete":true,"completed_date":"2022-05-05"},{"description":"Sustainable modal share is flat (i.e. not changing)","complete":true,"completed_date":"2022-05-05"},{"description":"Sustainable modal share is increasing, but Islington will still not achieve 90% by 2030","complete":false},{"description":"Sustainable modal share is increasing, and Islington WILL achieve 90% by 2030","complete":false}],"parking_availability":[{"name":"Status quo","description":"Status quo","complete":true,"completed_date":"2022-05-05"},{"name":"Plan","description":"Council commits to a maximum waiting time of no more than 2 months","complete":true,"completed_date":"2023-01-15"},{"name":"Zero waiting list","description":"The cycle hangar waiting time gets below 2 months","complete":false},{"name":"Supply drives demand","description":"The council begins rolling out hangars in locations where they are needed, but without specific requests from residents","complete":false}],"cycle_tracks":[{"description":"2km of protected cycle tracks on council-controlled roads","complete":true,"completed_date":"2022-05-05"},{"description":"10km of protected cycle tracks on council-controlled roads","complete":true,"completed_date":"2023-01-15"},{"description":"30km of protected cycle tracks on council-controlled roads","complete":false},{"description":"75km of protected cycle tracks on council-controlled roads","complete":false}],"parking_cost":[{"name":"Status quo","description":"Parking the cheapest car on the street is more expensive than a cycle hangar space","complete":true,"completed_date":"2022-05-05"},{"name":"Cheaper than a car","description":"Parking a car on the street for is always more expensive than a cycle hangar space","complete":false,"completed_date":null}]}
+{
+    "ltns":[
+        {
+            "name":"Status quo",
+            "description":"Status quo",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "name":"Barnsbury & Mildmay",
+            "description":"The Barnsbury and Mildmay LTNs have been delivered",
+            "complete":true,
+            "completed_date":"2022-06-05"
+        },
+        {
+            "name":"More LTNs",
+            "description":"Further LTNs have been delivered",
+            "complete":true,
+            "completed_date":"2022-07-20"
+        },
+        {
+            "name":"Complete",
+            "description":"All Islington neighbourhoods have LTNs",
+            "complete":true,
+            "completed_date":"2022-09-05"
+        }
+    ],
+    "logistics":[
+        {
+            "name":"Status quo",
+            "description":"Status quo",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "name":"Plan",
+            "description":"A cycle logistics plan has been approved",
+            "complete":false
+        },
+        {
+            "name":"5+",
+            "description":"5+ hubs have been created",
+            "complete":false
+        },
+        {
+            "name":"10+",
+            "description":"10+ hubs have been created",
+            "complete":false
+        }
+    ],
+    "modal_share_date":[
+        {
+            "description":"Status quo",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "description":"The goal of an earlier target date is being advocated by some councillors. [???]",
+            "complete":false,
+            "completed_date":null
+        },
+        {
+            "description":"Target date brought forward from 2041",
+            "complete":false,
+            "completed_date":null
+        },
+        {
+            "description":"Target date brought forward to 2030 at the latest",
+            "complete":false,
+            "completed_date":null
+        }
+    ],
+    "modal_share_stats":[
+        {
+            "description":"Sustainable modal share is declining",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "description":"Sustainable modal share is flat (i.e. not changing)",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "description":"Sustainable modal share is increasing, but Islington will still not achieve 90% by 2030",
+            "complete":false
+        },
+        {
+            "description":"Sustainable modal share is increasing, and Islington WILL achieve 90% by 2030",
+            "complete":false
+        }
+    ],
+    "parking_availability":[
+        {
+            "name":"Status quo",
+            "description":"Status quo",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "name":"Plan",
+            "description":"Council commits to a maximum waiting time of no more than 2 months",
+            "complete":true,
+            "completed_date":"2023-01-15"
+        },
+        {
+            "name":"Zero waiting list",
+            "description":"The cycle hangar waiting time gets below 2 months",
+            "complete":false
+        },
+        {
+            "name":"Supply drives demand",
+            "description":"The council begins rolling out hangars in locations where they are needed, but without specific requests from residents",
+            "complete":false
+        }
+    ],
+    "cycle_tracks":[
+        {
+            "description":"2km of protected cycle tracks on council-controlled roads",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "description":"10km of protected cycle tracks on council-controlled roads",
+            "complete":true,
+            "completed_date":"2023-01-15"
+        },
+        {
+            "description":"30km of protected cycle tracks on council-controlled roads",
+            "complete":false
+        },
+        {
+            "description":"75km of protected cycle tracks on council-controlled roads",
+            "complete":false
+        }
+    ],
+    "parking_cost":[
+        {
+            "name":"Status quo",
+            "description":"Parking the cheapest car on the street is more expensive than a cycle hangar space",
+            "complete":true,
+            "completed_date":"2022-05-05"
+        },
+        {
+            "name":"Cheaper than a car",
+            "description":"Parking a car on the street for is always more expensive than a cycle hangar space",
+            "complete":false,
+            "completed_date":null
+        }
+    ]
+}
