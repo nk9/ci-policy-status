@@ -5,8 +5,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import lineLength from '@turf/length';
 import styles from "/styles/CIMap.module.scss";
 
-import boundaries from '../public/static/gis/islington-ward-boundaries.geojson'
-import protectedSegments from '../public/static/gis/protected-segments.geojson'
+import boundaries from '/public/static/gis/islington-ward-boundaries.geojson'
+import protectedSegments from '/public/static/gis/protected-segments.geojson'
+import majorRoads from '/public/static/gis/major-roads.geojson'
 
 export default function CIMap({props}) {
     const boundaryStyle = {
@@ -32,7 +33,18 @@ export default function CIMap({props}) {
             // Show TfL segments as a different color
             'line-color': ["case", ["==", ["get", "tfl"], 0],
                 "#13941A",
-                "#AE08BD"
+                "#411AFF"
+            ]
+        }
+    }
+    const majorRoadsStyle = {
+        'id': 'majorRlads',
+        'type': 'line',
+        'paint': {
+            'line-width': 2,
+            'line-color': ["case", ["in", "Primary Road", ["string", ["get", "CLASSIFICA"]]],
+                "#000",
+                "#9A9A9A"
             ]
         }
     }
@@ -55,7 +67,8 @@ export default function CIMap({props}) {
           isTfL: segment && segment.properties.tfl == 1,
           isBiDi: segment && segment.properties.bidi == 1,
           length: length,
-          completed: segment && segment.properties.completed
+          completed: segment && segment.properties.completed,
+          notes: segment && segment.properties.notes
         });
     }, []);
     const selectedSegment = (hoverInfo && hoverInfo.roadName) || '';
@@ -75,6 +88,9 @@ export default function CIMap({props}) {
         >
           <Source type="geojson" data={boundaries}>
             <Layer {...boundaryStyle} />
+          </Source>
+          <Source type="geojson" data={majorRoads}>
+            <Layer {...majorRoadsStyle} />
           </Source>
           <Source type="geojson" data={protectedSegments}>
             <Layer {...protectedSegmentStyle} />
@@ -98,6 +114,7 @@ export default function CIMap({props}) {
                     <div className={styles.key}>Open as of</div>
                     <div className={styles.value}>{prettyDate(hoverInfo.completed)}</div>
                 </div>
+                <div className={styles.notes}>{hoverInfo.notes}</div>
               </Popup>
             )}
         </Map>
