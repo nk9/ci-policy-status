@@ -54,12 +54,7 @@
             "complete":true,
             "completed_date":"2022-05-05"
         },
-        {
-            "description":"The goal of an earlier target date is being advocated by some councillors. [???]",
-            "complete":false,
-            "completed_date":null
-        },
-        {
+    {
             "description":"Target date brought forward from 2041",
             "complete":false,
             "completed_date":null
