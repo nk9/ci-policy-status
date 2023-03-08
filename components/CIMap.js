@@ -3,6 +3,7 @@ import React from "react";
 import Map, {Popup, Source, Layer} from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import lineLength from '@turf/length';
+import styles from "/styles/CIMap.module.scss";
 
 import boundaries from '../public/static/gis/islington-ward-boundaries.geojson'
 import protectedSegments from '../public/static/gis/protected-segments.geojson'
@@ -53,11 +54,11 @@ export default function CIMap({props}) {
           roadName: segment && segment.properties.road,
           isTfL: segment && segment.properties.tfl == 1,
           isBiDi: segment && segment.properties.bidi == 1,
-          length: length
+          length: length,
+          completed: segment && segment.properties.completed
         });
     }, []);
     const selectedSegment = (hoverInfo && hoverInfo.roadName) || '';
-
 
     return (
         <Map
@@ -85,14 +86,29 @@ export default function CIMap({props}) {
                 latitude={hoverInfo.latitude}
                 closeButton={false}
               >
-                <dl>
-                <dt>Road</dt><dd>{selectedSegment}</dd>
-                <dt>Owner</dt><dd>{hoverInfo.isTfL ? "TfL" : "Council"}</dd>
-                <dt>Bidirectional</dt><dd>{hoverInfo.isBiDi ? "Yes" : "No"}</dd>
-                <dt>Lane meters</dt><dd>{hoverInfo.length.toFixed()}m</dd>
-                </dl>
+                <div className={styles.container}>
+                    <div className={styles.key}>Road</div>
+                    <div className={styles.value}>{selectedSegment}</div>
+                    <div className={styles.key}>Owner</div>
+                    <div className={styles.value}>{hoverInfo.isTfL ? "TfL" : "Council"}</div>
+                    <div className={styles.key}>Bidirectional</div>
+                    <div className={styles.value}>{hoverInfo.isBiDi ? "Yes" : "No"}</div>
+                    <div className={styles.key}>Lane meters</div>
+                    <div className={styles.value}>{hoverInfo.length.toFixed()}m</div>
+                    <div className={styles.key}>Open as of</div>
+                    <div className={styles.value}>{prettyDate(hoverInfo.completed)}</div>
+                </div>
               </Popup>
             )}
         </Map>
         )
+}
+
+function prettyDate(isoDate) {
+    if (isoDate) {
+        const date = new Date(isoDate)
+        return new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium'}).format(date)
+    }
+
+    return '';
 }
