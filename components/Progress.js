@@ -62,7 +62,7 @@ export default function Progress({policies, policy_id}) {
 		<Stack spacing={2}>
 			<ProgressContext.Provider value={{steps}}>
 	            <Box sx={{maxWidth: stepper_width}}>
-					<Stepper nonLinear activeStep={activeStep}>
+					<Stepper nonLinear activeStep={activeStep} connector={<CIConnector />}>
 						{items}
 					</Stepper>
 				</Box>

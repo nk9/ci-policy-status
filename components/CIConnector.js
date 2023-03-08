@@ -1,6 +1,5 @@
 import * as React from "react";
-import { useStepContext } from "@mui/material/Step/StepContext";
-import StepContext from "@mui/material/Step/StepContext";
+import { useStepContext } from "@mui/material/Step";
 
 import { styled } from "@mui/material/styles";
 import StepConnector, { stepConnectorClasses } from "@mui/material/StepConnector";
@@ -19,6 +18,9 @@ const CIConnectorRoot = styled(StepConnector)(({ theme }) => ({
 }));
 
 function CIConnector(props) {
+  const ctx = useStepContext();
+  console.log("context:", ctx);
+
   return (
     <CIConnectorRoot />
   );
