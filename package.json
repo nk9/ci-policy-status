@@ -16,6 +16,7 @@
     "@emotion/styled": "latest",
     "@mui/icons-material": "^5.10.3",
     "@mui/material": "latest",
+    "@turf/area": "^6.5.0",
     "@turf/length": "^6.5.0",
     "json-loader": "^0.5.7",
     "mapbox-gl": "^2.10.0",

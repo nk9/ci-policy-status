@@ -19,7 +19,7 @@ const CIConnectorRoot = styled(StepConnector)(({ theme }) => ({
 
 function CIConnector(props) {
   const ctx = useStepContext();
-  console.log("context:", ctx);
+  // console.log("context:", ctx);
 
   return (
     <CIConnectorRoot />
