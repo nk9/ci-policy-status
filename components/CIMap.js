@@ -1,17 +1,17 @@
 import React from "react";
 
-import Map, { Popup, Source, Layer, ScaleControl, useControl } from 'react-map-gl';
+import Map, { Popup, Source, Layer, ScaleControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import lineLength from '@turf/length';
 import polygonArea from '@turf/area';
-import styles from "/styles/CIMap.module.scss";
+import styles from "./CIMap.module.scss";
 import ControlPanel from './CIMapControlPanel';
 
 import boundaries from '/public/static/gis/islington-ward-boundaries.geojson'
 import protectedSegments from '/public/static/gis/protected-segments.geojson'
 import majorRoads from '/public/static/gis/major-roads.geojson'
 
-export default function CIMap({ props }) {
+export default function CIMap() {
     const layerIDs = ['boundaries', 'majorRoads', 'protectedSegments']
 
     const data = {

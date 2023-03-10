@@ -31,11 +31,12 @@ function ControlPanel(props) {
             {Object.entries(hideableLayers).map(([layerID, displayName]) => (
                 <div key={layerID} className="input">
                     <input
+                        id={layerID}
                         type="checkbox"
                         checked={visibility[layerID]}
                         onChange={evt => onVisibilityChange(layerID, evt.target.checked)}
                     />
-                    <label>{displayName}</label>
+                    <label htmlFor={layerID}>{displayName}</label>
                 </div>
             ))}
         </div>
