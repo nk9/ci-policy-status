@@ -3,14 +3,16 @@ import styles from "./CIMapControlPanel.module.scss";
 
 const hideableLayers = {
     'protectedSegments': "Protected Tracks",
-    'majorRoads': "Major Roads"
+    'majorRoads': "Major Roads",
+    'ltns': "People-Friendly Streets"
 }
 
 function ControlPanel(props) {
     const [visibility, setVisibility] = useState({
         boundaries: true,
         protectedSegments: true,
-        majorRoads: true
+        majorRoads: true,
+        ltns: true
     });
 
     useEffect(() => {

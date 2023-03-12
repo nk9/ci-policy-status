@@ -10,14 +10,16 @@ import ControlPanel from './CIMapControlPanel';
 import boundaries from '/public/static/gis/islington-ward-boundaries.geojson'
 import protectedSegments from '/public/static/gis/protected-segments.geojson'
 import majorRoads from '/public/static/gis/major-roads.geojson'
+import ltns from '/public/static/gis/islington-ltns-post-2020.geojson'
 
 export default function CIMap() {
-    const layerIDs = ['boundaries', 'majorRoads', 'protectedSegments']
+    const layerIDs = ['boundaries', 'ltns', 'majorRoads', 'protectedSegments']
 
     const data = {
         'boundaries': boundaries,
         'protectedSegments': protectedSegments,
-        'majorRoads': majorRoads
+        'majorRoads': majorRoads,
+        'ltns': ltns
     }
 
     const layerStyles = {
@@ -25,8 +27,16 @@ export default function CIMap() {
             'id': 'boundaries',
             'type': 'fill',
             'paint': {
-                'fill-color': "#EBAA60",
-                'fill-opacity': 0.3
+                'fill-color': "#111",
+                'fill-opacity': 0.1
+            }
+        },
+        'ltns': {
+            'id': 'ltns',
+            'type': 'fill',
+            'paint': {
+                'fill-color': "#248747",
+                'fill-opacity': 0.2
             }
         },
         'protectedSegments': {
@@ -67,28 +77,19 @@ export default function CIMap() {
     const [layersVisibility, setLayersVisibility] = React.useReducer((state, updates) => ({ ...state, ...updates }),
         {});
     const [hoverInfo, setHoverInfo] = React.useState(null);
+    const [hoveredFeature, setHoveredFeature] = React.useState(null);
 
     const onHover = React.useCallback(event => {
-        const segment = event.features && event.features[0];
-        const meters = (segment && lineLength(segment) * 1000) || 0;
-        var length = meters;
-
-        if (segment && segment.properties.bidi) {
-            length = meters * 2;
+        if (event.features.length > 0) {
+            setHoveredFeature(event.features[0])
+            setHoverInfo({
+                longitude: event.lngLat.lng,
+                latitude: event.lngLat.lat
+            })
+        } else {
+            setHoveredFeature(null)
         }
-
-        setHoverInfo({
-            longitude: event.lngLat.lng,
-            latitude: event.lngLat.lat,
-            roadName: segment && segment.properties.road,
-            isTfL: segment && segment.properties.tfl == 1,
-            isBiDi: segment && segment.properties.bidi == 1,
-            length: length,
-            completed: segment && segment.properties.completed,
-            notes: segment && segment.properties.notes
-        });
     }, []);
-    const selectedSegment = (hoverInfo && hoverInfo.roadName) || '';
 
     const layers = [];
 
@@ -115,35 +116,73 @@ export default function CIMap() {
                 styleDiffing
                 mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
                 onMouseMove={onHover}
-                interactiveLayerIds={['protectedSegments']}
+                interactiveLayerIds={['protectedSegments', 'ltns']}
             >
                 {layers}
+                {hoveredFeature && preparePopover(hoverInfo, hoveredFeature, styles)}
 
-                {selectedSegment && (
-                    <Popup
-                        longitude={hoverInfo.longitude}
-                        latitude={hoverInfo.latitude}
-                        closeButton={false}
-                    >
-                        <div className={styles.container}>
-                            <div className={styles.key}>Road</div>
-                            <div className={styles.value}>{selectedSegment}</div>
-                            <div className={styles.key}>Owner</div>
-                            <div className={styles.value}>{hoverInfo.isTfL ? "TfL" : "Council"}</div>
-                            <div className={styles.key}>Bidirectional</div>
-                            <div className={styles.value}>{hoverInfo.isBiDi ? "Yes" : "No"}</div>
-                            <div className={styles.key}>Lane meters</div>
-                            <div className={styles.value}>{hoverInfo.length.toFixed()}m</div>
-                            <div className={styles.key}>Open as of</div>
-                            <div className={styles.value}>{prettyDate(hoverInfo.completed)}</div>
-                        </div>
-                        <div className={styles.notes}>{hoverInfo.notes}</div>
-                    </Popup>
-                )}
                 <ScaleControl />
                 <ControlPanel onChange={setLayersVisibility} />
             </Map>
         </>
+    )
+}
+
+function preparePopover(hoverInfo, feature, styles) {
+    let infoPairs = {}
+    let headline = ""
+    let props = feature.properties
+
+    switch (feature.layer.id) {
+        case "protectedSegments":
+            headline = "Cycle Track"
+            const meters = (lineLength(feature) * 1000) || 0;
+            let length = meters;
+
+            if (props.bidi) {
+                length = meters * 2;
+            }
+
+            infoPairs = {
+                "Road": props.road,
+                "Authority": (props.tfl == 1) ? "TfL" : "Council",
+                "Bidirectional": (props.bidi == 1) ? "Yes" : "No",
+                "Lane meters": length.toFixed() + "m",
+                "Open as of": prettyDate(props.completed)
+            }
+            break;
+        case "ltns":
+            headline = "Healthy Neighbourhood"
+            infoPairs = {
+                "Name": props.Name,
+                "Area": props.area.toFixed() + "ha",
+                "Open as of": prettyDate(props.begin)
+            }
+            break;
+    }
+
+    let infoDivs = []
+    for (let [k, v] of Object.entries(infoPairs)) {
+        infoDivs.push(
+            <div className={styles.key} key={k}>{k}</div>,
+            <div className={styles.value} key={k + '-value'}>{v}</div>
+        )
+    }
+
+    return (
+        <Popup
+            anchor="right"
+            longitude={hoverInfo.longitude}
+            latitude={hoverInfo.latitude}
+            closeButton={false}
+        >
+            <h3 className={styles.headline}>{headline}</h3>
+            <div className={styles.container}>
+                {infoDivs}
+            </div>
+            {props.notes && <div className={styles.notes}>{props.notes}</div>}
+        </Popup>
+
     )
 }
 
