@@ -1,0 +1,49 @@
+/* [1] 'auto-fit' grid columns, so no media queries required. */
+/* [2] 'dense' packing fills in holes earlier in the grid. */
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: dense;
+    /* [2] */
+    grid-template-columns: repeat(auto-fit, 20rem);
+    /* [1] */
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    & li {
+        list-style: none;
+    }
+
+    & li>* {
+        margin: 1rem;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rebeccapurple;
+        outline: 0;
+    }
+}
+
+.grid>* {
+    align-items: flex-start;
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* [3] Make fullwidth card span all grid columns. */
+.fullwidth {
+    grid-column: 1 / -1;
+}
+
+.is_hidden {
+    display: none;
+}
+
+.fullwidth,
+.is_selected {
+    background: wheat;
+}
