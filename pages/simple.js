@@ -1,13 +1,14 @@
 import * as React from 'react';
 import styles from "/styles/Simple.module.scss";
 import clsx from "clsx";
+import Image from 'next/image';
+import Link from '../src/Link';
 
 import {
-    // Box,
+    Box,
     // Container,
     // Stack,
     Typography,
-    // Grid,
     // Divider,
     Button,
     IconButton,
@@ -54,28 +55,25 @@ export default function Simple() {
 
     return (
         <main>
-            <h1>Playing with CSS Grid... to "inject" a fullwidth grid item into a grid whose columns are <i>auto-arranged</i></h1>
-            <p>Imagine a grid of product cards, where clicking on a "quick view" button "injects" a new card that is expanded full width of the entire grid, immediately below the card that was clicked (thereby allowing a visual "connection" between the two cards), and is completely responsive.</p>
-            <ul>
-                <li>Usually, "quick views" are rendered as popups or overlays, but in this case, an "inline" solution is required.</li>
-                <li>This mock-up requires very little CSS code to achieve it, and <strong>zero media queries</strong>.</li>
-                <li>In reality, the "injected" card will probably be fetched via JavaScript and placed in the correct place in the DOM. However, for demo purposes, I've directly added the fullwidth cards in their correct positions in the DOM, and I'm simply toggling their visibility.</li>
-            </ul>
+            <Box sx={{ my: 4 }}>
+                <Typography variant="h3" gutterBottom>
+                    Cycle Islington Policy Observatory
+                </Typography>
+                <Typography variant="body1">In the 2022 election, Cycle Islington chose five policy priorities, our <Link href="https://cycleislington.uk/2021/five-asks-election-2022/" color="secondary">Five Asks</Link>,
+                    to help ensure that whichever party was elected would accelerate the borough's transition to a
+                    low-carbon future. In their <Link href="https://www.islington-labour.org.uk/2022-manifesto/" color="secondary">election manifesto</Link>,
+                    Islington Labour pledged to ensure that "local people can get on their bike and get cycling safely around Islington."
+                </Typography>
 
-            <h2>Accessibility considerations</h2>
-            <ul>
-                <li>HTML source order is preserved for the cards, providing a good natural tab order.</li>
-                <li>The "quick view" buttons behave as "toggles", so they have <code>aria-expanded</code> and <code>aria-controls</code> attributes. See <a href="https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/">ARIA best practices - disclosure widget</a> for more information.</li>
-                <li>Focus management ensures the "injected" card can receive keyboard focus, and on closing the card, keyboard focus is returned to the button that originally toggled the card's visibility.</li>
-                <li>Read the full <a href="https://css-tricks.com/expandable-sections-within-a-css-grid/">CSS Tricks article.</a>
-                </li>
-            </ul>
+                <Typography variant="body1" mt={2}>We are tracking the council's progress toward this commitment. Here is our citizen assessment
+                    of their progress so far.</Typography>
+            </Box>
 
             <ul className={styles.grid}>
                 <li className={styles.header}>
                 </li>
                 <li className={styles.header}>
-                    2022
+                    Start
                 </li>
                 <li className={styles.header}>
                     Today
@@ -88,17 +86,41 @@ export default function Simple() {
                 </li>
                 <li>
                     <div className={styles.d_flex}>
-                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="quickview-01">
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="modal-share-date">
                             <AddIcon />
                         </IconButton>
-                        <Typography>Target Date</Typography>
+                        <span style={{ fontSize: "16pt" }}>Target Date</span>
                     </div>
                 </li>
-                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="quickview-01">
-                    <Button onClick={clickCloseQuickView} variant="contained">Close 2</Button>
-                    <p>fullwidth 2</p>
-                    <p>This grid item needs to stretch the full width of the page, and force other grid items to reflow around it, whilst remaining "visually connected" to the preceeding grid item. This grid item needs to stretch the full width of the page, and force other grid items to reflow around it, whilst remaining "visually connected" to the preceeding grid item.</p>
-                    <p>Test <a href="#">inline link</a>.</p>
+                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="modal-share-date">
+                    <Image src="/static/images/sustainable-modal-share.jpg"
+                        layout="intrinsic"
+                        width="900"
+                        height="200"
+                        alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
+                    <Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable
+                        transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to
+                        increase the sustainable modal share”.</Typography>
+                </li>
+                <li>
+                    <p>2041</p>
+                </li>
+                <li>
+                    <p>2041</p>
+                </li>
+                <li>
+                    <p>2030</p>
+                </li>
+                <li>
+                    <div className={styles.d_flex}>
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="modal-share">
+                            <AddIcon />
+                        </IconButton>
+                        <span style={{ fontSize: "16pt" }}>Modal Share</span>
+                    </div>
+                </li>
+                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="modal-share">
+                    <Typography variant="body1">Each year, TfL publishes figures about the sustainable modal share in each borough. [-ed More needed…]</Typography>
                 </li>
                 <li>
                     <p>85%?</p>
@@ -108,36 +130,37 @@ export default function Simple() {
                 </li>
                 <li>
                     <p>90%?</p>
-                    {/*<Button onClick={clickOpenQuickView} variant="contained">Quick view</Button>*/}
                 </li>
-                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="quickview-04">
-                    <Button onClick={clickCloseQuickView} variant="contained">Close 4</Button>
-                    <p>fullwidth 4</p>
-                    <p>This grid item needs to stretch the full width of the page, and force other grid items to reflow around it, whilst remaining "visually connected" to the preceeding grid item.</p>
-                    <p>Test <a href="#">inline link</a>.</p>
+                <li className={styles.section_header}>
+                    People Friendly Streets
                 </li>
                 <li>
                     <div className={styles.d_flex}>
-                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="quickview-05">
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="ltns">
                             <AddIcon />
                         </IconButton>
-                        <Typography>Modal Share</Typography>
+                        <span style={{ fontSize: "16pt" }}>Target Date</span>
                     </div>
                 </li>
-                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="quickview-05">
-                    <Button onClick={clickCloseQuickView} variant="contained">Close 5</Button>
-                    <p>fullwidth 5</p>
-                    <p>This grid item needs to stretch the full width of the page, and force other grid items to reflow around it, whilst remaining "visually connected" to the preceeding grid item.</p>
-                    <p>Test <a href="#">inline link</a>.</p>
+                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="ltns">
+                    <Image src="/static/images/LTNs.jpg"
+                        layout="intrinsic"
+                        width="900"
+                        height="200"
+                        alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
+                    <Typography variant="body1">We have asked the council to cover the borough with “no-through traffic areas” (Low-Traffic
+                        Neighbourhoods) to cover the borough by 2024. They said they are “committed to … creating
+                        liveable neighbourhoods across the borough including with people friendly pavements and more
+                        greening”. (Manifesto page 23)</Typography>
                 </li>
                 <li>
-                    <p>6</p>
+                    <p>20%</p>
                 </li>
                 <li>
-                    <p>7</p>
+                    <p>20%</p>
                 </li>
                 <li>
-                    <p>8</p>
+                    <p>100%</p>
                 </li>
             </ul>
         </main >

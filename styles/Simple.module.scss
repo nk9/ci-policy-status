@@ -58,21 +58,18 @@
 
 .section_header {
     grid-column: 1 / -1;
-    height: 20px;
+    padding: 1rem;
+    font-size: 18pt;
     background: black;
     color: white;
 }
 
 .header {
-    height: 20px;
     background: white;
     padding-left: 1rem;
+    padding-bottom: .5rem;
 }
 
 .d_flex {
     display: flex;
-}
-
-.stat_line {
-    // grid_
 }
