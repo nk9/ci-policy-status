@@ -2,12 +2,13 @@
 /* [2] 'dense' packing fills in holes earlier in the grid. */
 .grid {
     display: grid;
-    gap: 1rem;
+    // gap: 1rem;
     grid-auto-flow: dense;
     /* [2] */
-    grid-template-columns: repeat(auto-fit, 20rem);
+    grid-template-columns: 48rem 4rem 4rem 4rem;
     /* [1] */
     justify-content: center;
+    width: 60rem;
 
     margin: 0;
     padding: 0;
@@ -23,6 +24,13 @@
     &:focus {
         box-shadow: 0 0 0 0.25rem rebeccapurple;
         outline: 0;
+    }
+}
+
+@media(max-width: 600px) {
+    .grid {
+        justify-content: left;
+        grid-template-columns: 12rem 4rem 4rem 4rem;
     }
 }
 
@@ -46,4 +54,25 @@
 .fullwidth,
 .is_selected {
     background: wheat;
+}
+
+.section_header {
+    grid-column: 1 / -1;
+    height: 20px;
+    background: black;
+    color: white;
+}
+
+.header {
+    height: 20px;
+    background: white;
+    padding-left: 1rem;
+}
+
+.d_flex {
+    display: flex;
+}
+
+.stat_line {
+    // grid_
 }

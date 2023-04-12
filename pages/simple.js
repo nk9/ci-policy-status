@@ -6,35 +6,42 @@ import {
     // Box,
     // Container,
     // Stack,
-    // Typography,
+    Typography,
     // Grid,
     // Divider,
-    Button
+    Button,
+    IconButton,
 } from "@mui/material";
 
+import AddIcon from '@mui/icons-material/Add';
+import CloseIcon from '@mui/icons-material/Close';
+
 export default function Simple() {
-    const openQuickView = (toggle, toggleParent, fullwidth) => {
+    const [expanded, setExpanded] = React.useState([])
+
+    const openQuickView = (toggle, fullwidth) => {
         toggle.setAttribute('aria-expanded', 'true');
         fullwidth.classList.toggle(styles.is_hidden);
         // Make fullwidth card keyboard focusable.
         fullwidth.setAttribute('tabIndex', '0');
     };
 
-    const closeQuickView = (toggle, toggleParent, fullwidth) => {
+    const closeQuickView = (toggle, fullwidth) => {
         toggle.setAttribute('aria-expanded', 'false');
         fullwidth.classList.toggle(styles.is_hidden);
         fullwidth.removeAttribute('tabIndex');
     };
 
     var clickOpenQuickView = (e) => {
-        const toggle = e.target
-        const toggleParent = toggle.parentElement
-        const fullwidth = toggleParent.nextElementSibling
+        // debugger;
+        const toggle = e.target.closest("button")
+        const content_id = toggle.dataset.contentId
+        const content = document.getElementById(content_id)
 
-        if (fullwidth.getAttribute('aria-expanded') === 'false') {
-            openQuickView(toggle, toggleParent, fullwidth)
+        if (toggle.getAttribute('aria-expanded') !== 'false') {
+            openQuickView(toggle, content)
         } else {
-            closeQuickView(toggle, toggleParent, fullwidth)
+            closeQuickView(toggle, content)
         }
     }
 
@@ -42,7 +49,7 @@ export default function Simple() {
         const toggle = e.target
         const toggleParent = toggle.parentElement
 
-        closeQuickView(toggle, toggleParent, toggleParent)
+        closeQuickView(toggle, toggleParent)
     }
 
     return (
@@ -65,25 +72,43 @@ export default function Simple() {
             </ul>
 
             <ul className={styles.grid}>
-                <li>
-                    <p>1</p>
+                <li className={styles.header}>
+                </li>
+                <li className={styles.header}>
+                    2022
+                </li>
+                <li className={styles.header}>
+                    Today
+                </li>
+                <li className={styles.header}>
+                    Target
+                </li>
+                <li className={styles.section_header}>
+                    Sustainable Transport Modal Share
                 </li>
                 <li>
-                    <p>2</p>
-                    <Button onClick={clickOpenQuickView} variant="contained">Quick view</Button>
+                    <div className={styles.d_flex}>
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="quickview-01">
+                            <AddIcon />
+                        </IconButton>
+                        <Typography>Target Date</Typography>
+                    </div>
                 </li>
                 <li className={clsx(styles.fullwidth, styles.is_hidden)} id="quickview-01">
                     <Button onClick={clickCloseQuickView} variant="contained">Close 2</Button>
                     <p>fullwidth 2</p>
-                    <p>This grid item needs to stretch the full width of the page, and force other grid items to reflow around it, whilst remaining "visually connected" to the preceeding grid item.</p>
+                    <p>This grid item needs to stretch the full width of the page, and force other grid items to reflow around it, whilst remaining "visually connected" to the preceeding grid item. This grid item needs to stretch the full width of the page, and force other grid items to reflow around it, whilst remaining "visually connected" to the preceeding grid item.</p>
                     <p>Test <a href="#">inline link</a>.</p>
                 </li>
                 <li>
-                    <p>3</p>
+                    <p>85%?</p>
                 </li>
                 <li>
-                    <p>4</p>
-                    <Button onClick={clickOpenQuickView} variant="contained">Quick view</Button>
+                    <p>85%?</p>
+                </li>
+                <li>
+                    <p>90%?</p>
+                    {/*<Button onClick={clickOpenQuickView} variant="contained">Quick view</Button>*/}
                 </li>
                 <li className={clsx(styles.fullwidth, styles.is_hidden)} id="quickview-04">
                     <Button onClick={clickCloseQuickView} variant="contained">Close 4</Button>
@@ -92,8 +117,12 @@ export default function Simple() {
                     <p>Test <a href="#">inline link</a>.</p>
                 </li>
                 <li>
-                    <p>5</p>
-                    <Button onClick={clickOpenQuickView} variant="contained">Quick view</Button>
+                    <div className={styles.d_flex}>
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="quickview-05">
+                            <AddIcon />
+                        </IconButton>
+                        <Typography>Modal Share</Typography>
+                    </div>
                 </li>
                 <li className={clsx(styles.fullwidth, styles.is_hidden)} id="quickview-05">
                     <Button onClick={clickCloseQuickView} variant="contained">Close 5</Button>
