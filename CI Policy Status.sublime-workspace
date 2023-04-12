@@ -1,0 +1,939 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"CLI",
+				"CLIENT_ID"
+			],
+			[
+				"c",
+				"client_id"
+			],
+			[
+				"PASS",
+				"PASSWORD"
+			],
+			[
+				"bo",
+				"boto3_client_kwargs"
+			],
+			[
+				"boto",
+				"boto3_client_kwargs"
+			],
+			[
+				"clie",
+				"client_metadata"
+			],
+			[
+				"clien",
+				"client_metadata"
+			],
+			[
+				"Te",
+				"TemporaryPassword"
+			],
+			[
+				"envri",
+				"environment"
+			],
+			[
+				"envi",
+				"environments"
+			],
+			[
+				"e",
+				"email"
+			],
+			[
+				"reacha",
+				"reachable_polling_places"
+			],
+			[
+				"Po",
+				"PollingPlace"
+			],
+			[
+				"Vol",
+				"VolunteerFactory"
+			],
+			[
+				"tra",
+				"travel_distance"
+			],
+			[
+				"travel",
+				"travel_time"
+			],
+			[
+				"post",
+				"postgresql_using"
+			],
+			[
+				"address_Z",
+				"address_ZIP"
+			],
+			[
+				"generate_",
+				"generate_csv_file_dict"
+			],
+			[
+				"ex",
+				"expected"
+			],
+			[
+				"group",
+				"groupby"
+			],
+			[
+				"vol",
+				"volunteers"
+			],
+			[
+				"distance",
+				"distance_m"
+			],
+			[
+				"P",
+				"PollingPlace"
+			],
+			[
+				"tag",
+				"tag_names"
+			],
+			[
+				"json",
+				"jsonify"
+			],
+			[
+				"RE",
+				"REDIS_DOCKER_NAME"
+			],
+			[
+				"NEW",
+				"NEW_USERNAME"
+			],
+			[
+				"USER",
+				"USER_POOL_ID"
+			],
+			[
+				"mod",
+				"modified_files"
+			],
+			[
+				"modi",
+				"modified_files"
+			],
+			[
+				"get",
+				"getenv"
+			],
+			[
+				"LOC",
+				"LOCATION_INSIDE"
+			],
+			[
+				"LOCAT",
+				"location"
+			],
+			[
+				"volunt",
+				"volunteer_id"
+			],
+			[
+				"geom_",
+				"geom_wgs84"
+			],
+			[
+				"te",
+				"tenant"
+			],
+			[
+				"ten",
+				"tenant_id"
+			],
+			[
+				"do",
+				"do_count"
+			],
+			[
+				"DOCK",
+				"DOCKER_TEST_FILE"
+			],
+			[
+				"TIGER",
+				"TIGER_FILE"
+			],
+			[
+				"TIGE",
+				"TIGER_URL"
+			],
+			[
+				"INV",
+				"INVALID_USER_TENANTS"
+			],
+			[
+				"tenant",
+				"tenant_name"
+			],
+			[
+				"job",
+				"job_id"
+			],
+			[
+				"current",
+				"current_app"
+			],
+			[
+				"reg",
+				"reg_jurisdiction"
+			],
+			[
+				"fre",
+				"freeze_time"
+			],
+			[
+				"curre",
+				"current_tenant"
+			],
+			[
+				"tean",
+				"tenant_name"
+			],
+			[
+				"star",
+				"start_time"
+			],
+			[
+				"freez",
+				"freeze_time"
+			],
+			[
+				"req",
+				"requires_auth"
+			],
+			[
+				"Jur",
+				"JurisdictionFactory"
+			],
+			[
+				"tena",
+				"tenant_name"
+			],
+			[
+				"cur",
+				"current_tenant"
+			],
+			[
+				"tar",
+				"target_user_groups"
+			],
+			[
+				"tran",
+				"transform_wgs84_2163"
+			],
+			[
+				"trans",
+				"transformer_nad83_2163"
+			],
+			[
+				"us",
+				"use_worker"
+			],
+			[
+				"use",
+				"use_worker"
+			],
+			[
+				"impor",
+				"import_tenants_task"
+			],
+			[
+				"juris",
+				"jurisdictions"
+			],
+			[
+				"add",
+				"add_arguments"
+			],
+			[
+				"create_",
+				"create_subparser"
+			],
+			[
+				"poly",
+				"polyg_count"
+			],
+			[
+				"add_a",
+				"add_arguments"
+			],
+			[
+				"get_",
+				"get_shift_assignment"
+			],
+			[
+				"Shi",
+				"Shift"
+			],
+			[
+				"Shif",
+				"ShiftAssignment"
+			],
+			[
+				"Shift",
+				"ShiftAssignment"
+			],
+			[
+				"obj",
+				"object_ids"
+			],
+			[
+				"Vo",
+				"VolunteerAvailabilityFactory"
+			],
+			[
+				"Jui",
+				"JurisdictionFactory"
+			],
+			[
+				"set",
+				"set_auth_to_error"
+			],
+			[
+				"Pol",
+				"PollingPlaceFactory"
+			],
+			[
+				"Ten",
+				"Tenant"
+			],
+			[
+				"da",
+				"date"
+			],
+			[
+				"SRI",
+				"SRID_US_EQUAL_AREA"
+			],
+			[
+				"Poll",
+				"PollingPlaceFactory"
+			],
+			[
+				"SR",
+				"SRID_WGS84"
+			],
+			[
+				"Ju",
+				"JurisdictionFactory"
+			],
+			[
+				"gen",
+				"generate_tsrange"
+			],
+			[
+				"gene",
+				"generate_csv_file_pandas"
+			],
+			[
+				"user",
+				"user_groups"
+			],
+			[
+				"Polling",
+				"PollingPlace"
+			],
+			[
+				"new",
+				"new_config"
+			],
+			[
+				"import",
+				"import_jurisdictions_task"
+			],
+			[
+				"s",
+				"status_code"
+			],
+			[
+				"tenan",
+				"tenant_exempt"
+			],
+			[
+				"run_",
+				"run_migrations_online"
+			],
+			[
+				"rise",
+				"raise"
+			],
+			[
+				"poll",
+				"polling_place"
+			],
+			[
+				"as_dict_for_",
+				"as_dict_for_vol"
+			],
+			[
+				"Volunteer",
+				"VolunteerFactory"
+			],
+			[
+				"start",
+				"start_datetime"
+			],
+			[
+				"jur",
+				"jurisdiction"
+			],
+			[
+				"gener",
+				"generate_shift"
+			],
+			[
+				"confi",
+				"config_class"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"typo",
+				"Markdown: Open with Typora.app"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"markdown",
+				"MarkdownEditing: Toggle Automatic Link URL Folding"
+			],
+			[
+				"fold",
+				"Code Folding: Unfold"
+			],
+			[
+				"jspre",
+				"JsPrettier: Format Code"
+			],
+			[
+				"vp",
+				"View Package File"
+			],
+			[
+				"scop",
+				"Scope Hunter: Show Scope Under Cursor(s)"
+			],
+			[
+				"scope",
+				"Scope Hunter: Toggle Instant Scoper"
+			],
+			[
+				"macv",
+				"Open with MacVim"
+			],
+			[
+				"vpf",
+				"View Package File"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"vpc",
+				"View Package File"
+			],
+			[
+				"v",
+				"View Package File"
+			],
+			[
+				"neov",
+				"NeoVintageous: Open RC File"
+			],
+			[
+				"markdolink",
+				"MarkdownEditing: New Inline Link"
+			],
+			[
+				"ari",
+				"Arithmetic"
+			],
+			[
+				"vintageous",
+				"NeoVintageous: Reload RC File"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 395.0,
+		"history":
+		[
+			"window.run_command(\"testing\")",
+			"window.run_command(\"macvim\")",
+			"window.run_command(\"macvimd\")",
+			"window.run_command(\"macvim\")",
+			"window.run_command(\"nope\")",
+			"sys.version",
+			"import sys",
+			"sys.version",
+			"window.run_command(\"aid\")",
+			"window.run_command(\"macvim\")",
+			"window.run_command(\"test2\")",
+			"window.run_command(\"example\")",
+			"view.run_command(\"example\")",
+			"view.run_command(\"elephant\")",
+			"view.run_command(\"macvim\", {\"category\": \"file+sys\"})",
+			"view.run_command(\"macvim\")",
+			"view.run_command(\"example\")",
+			"view.run_command(\"macvim\")",
+			":help gcc",
+			"sublime.log_commands(False)",
+			"sublime.log_input(False)",
+			"noremap",
+			":noremap",
+			"sublime.log_input(True)",
+			"sublime.log_commands(True)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/nick/Projects/cycle-islington/ci-policy-status"
+	],
+	"file_history":
+	[
+		"/Users/nick/Projects/V7/website/utilities/email.py",
+		"/Users/nick/Projects/V7/website/.github/workflows/main.yml",
+		"/Users/nick/Projects/knowing-nature/kn-website/layouts/partials/tnd-redirects/AddRules.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/layouts/partials/article/components/content.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/36/2020-11-22-ep-36-journal-club-ways-of-knowing/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/layouts/partials/footer/custom.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/48/embedding-climate-in-curriculum-and-hope-enhancing-programmes/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/assets/scss/variables.scss",
+		"/Users/nick/Projects/knowing-nature/kn-website/assets/scss/custom.scss",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/page/spottersheets/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/config.yaml",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/film-club/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/journal-club/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/picture-books/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/Podcast/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/Resources/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/assets/scss/partials/article.scss",
+		"/Users/nick/Projects/knowing-nature/kn-website/layouts/index.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/assets/scss/partials/pagination.scss",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/page/spottersheets/spotter-sheets.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/44/pond-dipping-and-night-time-nature-at-london-wetland-centre/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/10b/invertebrates-in-our-homes/index.md",
+		"/private/tmp/big:images.txt",
+		"/Users/nick/Projects/knowing-nature/kn-website/package.json",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/layouts/_default/list.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/Picture books/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/post/2021-03-22-leaf-hunting-with-line-drawings/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/Film Club/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/Journal Club/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/53/seaspiracy/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/categories/Picture books-blah/_index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/the-boy-and-the-whale/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/layouts/shortcodes/book.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/watercress/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/the-giving-tree/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/follow-the-moon-home/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/layouts/_default/archives.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/town-is-by-the-sea/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/the-great-kapok-tree/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/fatimas-great-outdoors/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/the-bug-girl/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/i-wish-you-knew/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/bird-boy/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/resource/a-different-pond/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/drafts/Picture_books_Not_just_for_little_kids/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/page/about/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/assets/ts/gallery.ts",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/page/archives/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/assets/icons/brand-youtube.svg",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/page/search/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/assets/icons/info.svg",
+		"/Users/nick/Projects/knowing-nature/kn-website/assets/icons/brand-podbean.svg",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/59/birdwatching-and-community-science/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/61/queer-identity-research-and-cricket-behaviour/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/62/lgbtq-tours-in-zoology-museums/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/63/supporting-lgbtq-students/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/64/project-seagrass/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/65/scicomms-and-job-interview-tips/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/config.yaml",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/45/arrival/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/32/game-based-education-with-minecraft/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/.github/workflows/run-htmltest.yml",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/i18n/en.yaml",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/layouts/partials/sidebar/right.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/layouts/index.html",
+		"/Users/nick/Projects/knowing-nature/kn-website/.htmltest.yml",
+		"/Users/nick/Projects/knowing-nature/kn-website/.gitattributes.attributes",
+		"/Users/nick/Projects/knowing-nature/kn-website/.gitignore",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/6/2020-01-19-episode-6-mammal-gallery-tour-part-2/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/55/philosophy-and-the-environmental-movement/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/content/episode/60/bat-ecology-citizen-science-and-walks/index.md",
+		"/Users/nick/Projects/knowing-nature/kn-website/kn-website.sublime-project",
+		"/Users/nick/Projects/knowing-nature/kn-website/themes/hugo-theme-stack/layouts/partials/helper/image.html",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/ GoHTML.sublime-syntax",
+		"/Users/nick/Projects/knowing-nature/knowing-nature/KnowingNature.sublime-project",
+		"/Users/nick/Projects/OSS/pycognito-nicktest/pycognito/pycognito/utils.py",
+		"/Users/nick/Library/Application Support/Sublime Merge/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/nick/Library/Application Support/Sublime Merge/Packages/User/Default (OSX).sublime-commands",
+		"/Users/nick/Library/Application Support/Sublime Merge/Packages/User/Preferences.sublime-settings",
+		"/Users/nick/Projects/OSS/pycognito-nicktest/pycognito/setup.py",
+		"/Users/nick/Projects/OSS/pycognito-nicktest/test.py",
+		"/Users/nick/Projects/OSS/pycognito-nicktest/.env",
+		"/Users/nick/Projects/Osprey/osprey-infra/README.md",
+		"/Users/nick/Projects/Osprey/data/requests.json",
+		"/Users/nick/Projects/Osprey/osprey-infra/modules/project/ses.tf",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/api/factories.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/.circleci/config.yml",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/config.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/api/test_models_volunteers.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/web/routes.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/MacVim.sublime-commands",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/macvim.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/MacVim/macvim.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/Typora Markdown App (OSX)/typora.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/Typora Markdown App (OSX)/packages.json",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/MacVim/macvim.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/Typora Markdown App (OSX)/package-metadata.json",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/MacVim/another.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/MacVim/MacVim.sublime-commands",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/another.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/testme.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/.neovintageousrc",
+		"/Users/nick/Projects/Osprey/osprey-backend/utils/ssm_parameter_store.py",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/Typora Markdown App (OSX)/Default.sublime-commands",
+		"/Users/nick/Library/Application Support/Sublime Text/Packages/User/CommandPalette.sublime-commands",
+		"/Users/nick/Projects/Osprey/osprey-backend/migrations/versions/11f28233db25_require_values_for_vol_boolean_fields.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/migrations/versions/3b41f0d4793c_change_zip_to_string.py",
+		"/Users/nick/Projects/xscraper/nifty-scraper.py",
+		"/Volumes/AV 3/text/https",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/data/test_routes.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/.env",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/conftest.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/utils/models.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/data/routes.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/__init__.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/common/constants.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/data/utilities.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/README.rst",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/common/populator.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/tasks/population.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/api/models.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/osprey/api/routes.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/api/test_models_polling_place.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/docker/entrypoint.aws.sh",
+		"/Users/nick/Projects/Osprey/osprey-backend/justfile",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/data/test_utilities.py",
+		"/private/tmp/test.py",
+		"/Users/nick/Projects/Osprey/osprey-backend/tests/data/test_routes_upload.py"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 126.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.output_panel_scroll_to_end_testcase":
+	{
+		"height": 126.0
+	},
+	"output.scopehunter.results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "CI Policy Status.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"en.y",
+				"themes/hugo-theme-stack/i18n/en.yaml"
+			],
+			[
+				"45index",
+				"content/episode/45/arrival/index.md"
+			],
+			[
+				"right",
+				"themes/hugo-theme-stack/layouts/partials/sidebar/right.html"
+			],
+			[
+				"image.ht",
+				"themes/hugo-theme-stack/layouts/partials/helper/image.html"
+			],
+			[
+				"helper",
+				"themes/hugo-theme-stack/layouts/partials/helper/image.html"
+			],
+			[
+				"",
+				"osprey/api/models.py"
+			],
+			[
+				"11f28233db25_require_values_for_vol_boolean_fields.py",
+				"migrations/versions/11f28233db25_require_values_for_vol_boolean_fields.py"
+			],
+			[
+				"p",
+				"osprey/common/populator.py"
+			],
+			[
+				"popu",
+				"osprey/common/populator.py"
+			],
+			[
+				"route",
+				"osprey/api/routes.py"
+			],
+			[
+				"model",
+				"osprey/api/models.py"
+			],
+			[
+				"just",
+				"justfile"
+			],
+			[
+				"test_tr",
+				"tests/common/test_transactional.py"
+			],
+			[
+				"geol",
+				"osprey/tasks/geolocation.py"
+			],
+			[
+				"const",
+				"osprey/common/constants.py"
+			],
+			[
+				"pop",
+				"osprey/common/populator.py"
+			],
+			[
+				"mana",
+				"osprey/tasks/manage.py"
+			],
+			[
+				"conf",
+				"osprey/config.py"
+			],
+			[
+				"cache",
+				"osprey/common/cache.py"
+			],
+			[
+				"geoc",
+				"utils/geocode.py"
+			],
+			[
+				"geo",
+				"tests/utils/geo.py"
+			],
+			[
+				"test_fla",
+				"tests/utils/test_flask_utils.py"
+			],
+			[
+				"gen",
+				"utils/generate_api_token.py"
+			],
+			[
+				"ssm",
+				"utils/ssm_parameter_manager.py"
+			],
+			[
+				"ssm_",
+				"utils/ssm_parameter_store.py"
+			],
+			[
+				"tenan",
+				"osprey/common/tenants.py"
+			],
+			[
+				"popul",
+				"osprey/tasks/population.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 29.0,
+		"last_filter": "ssm",
+		"selected_items":
+		[
+			[
+				"ssm",
+				"SSMParameterStore"
+			]
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 282.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
