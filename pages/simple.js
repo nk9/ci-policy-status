@@ -56,8 +56,8 @@ export default function Simple() {
     }
 
     return (
-        <Container maxWidth="md">
-            <Box sx={{ my: 4 }}>
+        <Container maxWidth="md" sx={{ px: 0 }} className='hagrid'>
+            <Box sx={{ my: 4, px: 2 }}>
                 <Typography variant="h3" gutterBottom>
                     Cycle Islington Policy Observatory
                 </Typography>
@@ -86,7 +86,7 @@ export default function Simple() {
                 <li className={styles.section_header}>
                     1. Sustainable Transport Modal Share
                 </li>
-                <li>
+                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="modal-share-date">
                             <AddIcon />
@@ -113,7 +113,7 @@ export default function Simple() {
                 <li>
                     <p>2030</p>
                 </li>
-                <li>
+                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="modal-share">
                             <AddIcon />
@@ -136,7 +136,7 @@ export default function Simple() {
                 <li className={styles.section_header}>
                     2. People Friendly Streets
                 </li>
-                <li>
+                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="ltns">
                             <AddIcon />
@@ -167,7 +167,7 @@ export default function Simple() {
                 <li className={styles.section_header}>
                     3. Cycle Logistics
                 </li>
-                <li>
+                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="cycle-logistics">
                             <AddIcon />
@@ -200,7 +200,7 @@ export default function Simple() {
                 <li className={styles.section_header}>
                     4. Secure Cycle Parking
                 </li>
-                <li>
+                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="cycle-parking">
                             <AddIcon />
@@ -240,7 +240,7 @@ export default function Simple() {
                 <li className={styles.section_header}>
                     5. Cycle Tracks on Main Roads
                 </li>
-                <li>
+                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="cycle-tracks">
                             <AddIcon />

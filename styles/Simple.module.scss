@@ -35,11 +35,12 @@
 }
 
 .grid>* {
-    align-items: flex-start;
+    align-items: center;
     background: #eee;
     display: flex;
     flex-direction: column;
     height: 100%;
+    justify-content: center;
 }
 
 /* [3] Make fullwidth card span all grid columns. */
@@ -57,6 +58,7 @@
 }
 
 .section_header {
+    align-items: flex-start;
     grid-column: 1 / -1;
     padding: 1rem;
     font-size: 18pt;
@@ -74,4 +76,8 @@
 
 .d_flex {
     display: flex;
+}
+
+.target_name {
+    align-items: flex-start;
 }
