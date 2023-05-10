@@ -4,9 +4,11 @@ import clsx from "clsx";
 import Image from 'next/image';
 import Link from '../src/Link';
 
+import CIMap from '../components/CIMap';
+
 import {
     Box,
-    // Container,
+    Container,
     // Stack,
     Typography,
     // Divider,
@@ -54,7 +56,7 @@ export default function Simple() {
     }
 
     return (
-        <main>
+        <Container maxWidth="md">
             <Box sx={{ my: 4 }}>
                 <Typography variant="h3" gutterBottom>
                     Cycle Islington Policy Observatory
@@ -82,7 +84,7 @@ export default function Simple() {
                     Target
                 </li>
                 <li className={styles.section_header}>
-                    Sustainable Transport Modal Share
+                    1. Sustainable Transport Modal Share
                 </li>
                 <li>
                     <div className={styles.d_flex}>
@@ -132,14 +134,14 @@ export default function Simple() {
                     <p>90%?</p>
                 </li>
                 <li className={styles.section_header}>
-                    People Friendly Streets
+                    2. People Friendly Streets
                 </li>
                 <li>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="ltns">
                             <AddIcon />
                         </IconButton>
-                        <span style={{ fontSize: "16pt" }}>Target Date</span>
+                        <span style={{ fontSize: "16pt" }}>Borough Coverage</span>
                     </div>
                 </li>
                 <li className={clsx(styles.fullwidth, styles.is_hidden)} id="ltns">
@@ -162,8 +164,120 @@ export default function Simple() {
                 <li>
                     <p>100%</p>
                 </li>
+                <li className={styles.section_header}>
+                    3. Cycle Logistics
+                </li>
+                <li>
+                    <div className={styles.d_flex}>
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="cycle-logistics">
+                            <AddIcon />
+                        </IconButton>
+                        <span style={{ fontSize: "16pt" }}>Number of Logistics Hubs</span>
+                    </div>
+                </li>
+                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="cycle-logistics">
+                    <Image src="/static/images/pedal-me.jpg"
+                        layout="intrinsic"
+                        width="900"
+                        height="200"
+                        alt="An electric cargo bike with a trailer moving a large load." />
+                    <Typography variant="body1">Motor-powered logistics is causing pollution and danger to our borough. We asked the council
+                        the creation of at least ten hubs, possibly on Council property, where all freight is delivered
+                        for final delivery by non-polluting, sustainable means – with a target date: May 2026. They pledged
+                        to “work to make deliveries more sustainable including by providing last mile delivery hubs“.</Typography>
+
+                    <Typography variant="body1" mt={2}>We assess their commitment by the number of hubs provided.</Typography>
+                </li>
+                <li>
+                    <p>1</p>
+                </li>
+                <li>
+                    <p>1</p>
+                </li>
+                <li>
+                    <p>10</p>
+                </li>
+                <li className={styles.section_header}>
+                    4. Secure Cycle Parking
+                </li>
+                <li>
+                    <div className={styles.d_flex}>
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="cycle-parking">
+                            <AddIcon />
+                        </IconButton>
+                        <span style={{ fontSize: "16pt" }}>Cycle vs. Car: Which is Cheaper to Park?</span>
+                    </div>
+                </li>
+                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="cycle-parking">
+                    <Box width={'100%'}><Image src="/static/images/bike-hangar.jpg"
+                        layout="intrinsic"
+                        width="900"
+                        height="200"
+                        alt="An electric cargo bike with a trailer moving a large load." /></Box>
+                    <Typography variant="body1">Islington installed its first bike hangar in 2016, and has kept increasing that count over the years. The <Link href="https://www.islington.media/news/islington-council-unveils-400th-bike-hangar-as-vision-for-cleaner-greener-healthier-borough-continues">400th was installed in March 2022</Link>, and they planned to have over 500 by March 2023.
+                    </Typography>
+                    <Typography variant='body1'>Delivering bike hangars is only part of the equation, though. In order for everyone who needs one to be able to take advantage of secure, on-street bike storage, hangars need to be affordable and spaces have to be available with as little wait as possible.
+                    </Typography>
+                    <Typography variant='body1'>As of 2023, <Link href="https://www.islington.gov.uk/roads/cycling/cycleparking">the council charges an up-front fee of £107.25</Link> per year to rent a bike hangar space, plus a refundable key deposit of £27.75. It's only possible to buy a full year, and the fee isn't refundable if you move midway through the year. The cost is also per bike, which means that a family of 4 could find themselves paying over £500 to store their bikes.
+                    </Typography>
+                    <Typography variant='body1'>
+                        Some electric car permits, by contrast, cost just <Link href="https://www.islington.gov.uk/parking/parking-permits/parking-permit-costs-table">£50 per year</Link> or £4.17 per month. Some petrol vehicles are even £100 per year, again with no premium on monthly permits.
+                    </Typography>
+                    <Typography variant='body1'>
+                        We have asked Islington to deliver secure, affordable,
+                        and flexible bike parking and ensure that it is never cheaper to park a car or van than to park a
+                        cycle. They have pledged to <em>“Invest in secure cycle storage with enough space to meet demand and cut costs of bike storage for lower-income households”.</em> (Manifesto, page 13.)</Typography>
+                </li>
+                <li>
+                    <p>Car</p>
+                </li>
+                <li>
+                    <p>Car</p>
+                </li>
+                <li>
+                    <p>Bike</p>
+                </li>
+                <li className={styles.section_header}>
+                    5. Cycle Tracks on Main Roads
+                </li>
+                <li>
+                    <div className={styles.d_flex}>
+                        <IconButton size="small" onClick={clickOpenQuickView} data-content-id="cycle-tracks">
+                            <AddIcon />
+                        </IconButton>
+                        <span style={{ fontSize: "16pt" }}>Proportion of Lane Kilometres</span>
+                    </div>
+                </li>
+                <li className={clsx(styles.fullwidth, styles.is_hidden)} id="cycle-tracks">
+                    <Image src="/static/images/pedal-me.jpg"
+                        layout="intrinsic"
+                        width="900"
+                        height="200"
+                        alt="An electric cargo bike with a trailer moving a large load." />
+                    <Typography variant="body1">We have asked the council to install protected cycle routes on all busy roads in the borough by 2026.
+                        They pledged to “build on the LTNs and 3 segregated cycle routes installed in the past two years.” [NOTE: is this correct?]</Typography>
+
+                    <Typography variant="body1" mt={2}>We are following-up the building of these routes, according to the authority in charge (TfL, Islington,
+                        or surrounding boroughs).</Typography>
+                </li>
+                <li>
+                    <p>5%</p>
+                </li>
+                <li>
+                    <p>5%</p>
+                </li>
+                <li>
+                    <p>60%?</p>
+                </li>
             </ul>
-        </main >
+
+            <Typography variant='h4' mt={5}>Current status</Typography>
+            <Box mt={3} xs={12} mb={3}>
+                <CIMap />
+            </Box>
+
+
+        </Container>
 
     );
 }

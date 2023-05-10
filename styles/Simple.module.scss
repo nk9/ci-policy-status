@@ -18,7 +18,7 @@
     }
 
     & li>* {
-        margin: 1rem;
+        margin: .5rem;
     }
 
     &:focus {
@@ -60,7 +60,8 @@
     grid-column: 1 / -1;
     padding: 1rem;
     font-size: 18pt;
-    background: black;
+    font-weight: bold;
+    background: #E30614;
     color: white;
 }
 
@@ -68,6 +69,7 @@
     background: white;
     padding-left: 1rem;
     padding-bottom: .5rem;
+    font-weight: bold;
 }
 
 .d_flex {
