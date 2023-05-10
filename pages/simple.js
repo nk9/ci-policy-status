@@ -185,8 +185,6 @@ export default function Simple() {
                         the creation of at least ten hubs, possibly on Council property, where all freight is delivered
                         for final delivery by non-polluting, sustainable means – with a target date: May 2026. They pledged
                         to “work to make deliveries more sustainable including by providing last mile delivery hubs“.</Typography>
-
-                    <Typography variant="body1" mt={2}>We assess their commitment by the number of hubs provided.</Typography>
                 </li>
                 <li>
                     <p>1</p>
@@ -209,11 +207,11 @@ export default function Simple() {
                     </div>
                 </li>
                 <li className={clsx(styles.fullwidth, styles.is_hidden)} id="cycle-parking">
-                    <Box width={'100%'}><Image src="/static/images/bike-hangar.jpg"
+                    <Image src="/static/images/bike-hangar.jpg"
                         layout="intrinsic"
                         width="900"
                         height="200"
-                        alt="An electric cargo bike with a trailer moving a large load." /></Box>
+                        alt="A bike hangar on the street with two people cycling past." />
                     <Typography variant="body1">Islington installed its first bike hangar in 2016, and has kept increasing that count over the years. The <Link href="https://www.islington.media/news/islington-council-unveils-400th-bike-hangar-as-vision-for-cleaner-greener-healthier-borough-continues">400th was installed in March 2022</Link>, and they planned to have over 500 by March 2023.
                     </Typography>
                     <Typography variant='body1'>Delivering bike hangars is only part of the equation, though. In order for everyone who needs one to be able to take advantage of secure, on-street bike storage, hangars need to be affordable and spaces have to be available with as little wait as possible.
