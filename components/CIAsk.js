@@ -62,7 +62,7 @@ export default function ({ target_name, targets, image, body }) {
                 {image ?? null}
                 {body}
             </li>
-            {targets.map((t) => <li><p>{t}</p></li>)}
+            {React.Children.toArray(targets.map((t) => <li><p>{t}</p></li>))}
         </>
     )
 }
