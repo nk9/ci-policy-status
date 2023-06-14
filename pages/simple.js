@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from '../src/Link';
 
 import CIMap from '../components/CIMap';
+import CIAsk from '../components/CIAsk';
 
 import {
     Box,
@@ -86,6 +87,19 @@ export default function Simple() {
                 <li className={styles.section_header}>
                     1. Sustainable Transport Modal Share
                 </li>
+                <CIAsk
+                    target_name="Target Date"
+                    targets={["2041", "2041", "2030"]}
+                    image={<Image src="/static/images/sustainable-modal-share.jpg"
+                        layout="intrinsic"
+                        width="900"
+                        height="200"
+                        alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />}
+                    body={<Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable
+                        transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to
+                        increase the sustainable modal share”.</Typography>}
+                />
+                {/*             
                 <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="modal-share-date">
@@ -113,7 +127,13 @@ export default function Simple() {
                 <li>
                     <p>2030</p>
                 </li>
-                <li className={styles.target_name}>
+*/}
+                <CIAsk
+                    target_name="Modal Share"
+                    targets={["85%?", "85%?", "90%?"]}
+                    body={<Typography variant="body1">Each year, TfL publishes figures about the sustainable modal share in each borough. [-ed More needed…]</Typography>}
+                />
+                {/*                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="modal-share">
                             <AddIcon />
@@ -133,10 +153,28 @@ export default function Simple() {
                 <li>
                     <p>90%?</p>
                 </li>
-                <li className={styles.section_header}>
+*/}                <li className={styles.section_header}>
                     2. People Friendly Streets
                 </li>
-                <li className={styles.target_name}>
+                <CIAsk
+                    target_name="Borough Coverage"
+                    targets={["20%?", "20%?", "100%"]}
+                    image={
+                        <Image src="/static/images/LTNs.jpg"
+                            layout="intrinsic"
+                            width="900"
+                            height="200"
+                            alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
+                    }
+                    body={
+                        <Typography variant="body1">We have asked the council to cover the borough with “no-through traffic areas” (Low-Traffic
+                            Neighbourhoods) to cover the borough by 2024. They said they are “committed to … creating
+                            liveable neighbourhoods across the borough including with people-friendly pavements and more
+                            greening”. (Manifesto page 23)</Typography>
+                    }
+                />
+
+                {/*                <li className={styles.target_name}>
                     <div className={styles.d_flex}>
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="ltns">
                             <AddIcon />
@@ -152,7 +190,7 @@ export default function Simple() {
                         alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
                     <Typography variant="body1">We have asked the council to cover the borough with “no-through traffic areas” (Low-Traffic
                         Neighbourhoods) to cover the borough by 2024. They said they are “committed to … creating
-                        liveable neighbourhoods across the borough including with people friendly pavements and more
+                        liveable neighbourhoods across the borough including with people-friendly pavements and more
                         greening”. (Manifesto page 23)</Typography>
                 </li>
                 <li>
@@ -164,7 +202,7 @@ export default function Simple() {
                 <li>
                     <p>100%</p>
                 </li>
-                <li className={styles.section_header}>
+*/}                <li className={styles.section_header}>
                     3. Cycle Logistics
                 </li>
                 <li className={styles.target_name}>
@@ -172,7 +210,7 @@ export default function Simple() {
                         <IconButton size="small" onClick={clickOpenQuickView} data-content-id="cycle-logistics">
                             <AddIcon />
                         </IconButton>
-                        <span style={{ fontSize: "16pt" }}>Number of Logistics Hubs</span>
+                        <span style={{ fontSize: "16pt" }}>Logistics Hub Count</span>
                     </div>
                 </li>
                 <li className={clsx(styles.fullwidth, styles.is_hidden)} id="cycle-logistics">

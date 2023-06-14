@@ -49,6 +49,7 @@
 /* [3] Make fullwidth card span all grid columns. */
 .fullwidth {
     grid-column: 1 / -1;
+    padding-bottom: 1rem;
 }
 
 .is_hidden {
