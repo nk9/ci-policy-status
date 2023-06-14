@@ -1,4 +1,5 @@
 import * as React from 'react';
+import slugify from 'slugify';
 
 import clsx from "clsx";
 import Image from 'next/image';
@@ -12,7 +13,8 @@ import {
 } from "@mui/material";
 
 export default function ({ target_name, targets, image, body }) {
-    const [expanded, setExpanded] = React.useState([])
+    const content_id = slugify(target_name)
+    const [expanded] = React.useState([])
 
     const openQuickView = (toggle, fullwidth) => {
         toggle.setAttribute('aria-expanded', 'true');
@@ -49,14 +51,14 @@ export default function ({ target_name, targets, image, body }) {
 
     return (
         <>
-            <li className={styles.target_name}>
+            <li className={styles.target_name} key={content_id}>
                 <div className={styles.d_flex}>
-                    <IconButton size="small" onClick={clickOpenQuickView} data-content-id="modal-share-date">
+                    <IconButton size="small" onClick={clickOpenQuickView} data-content-id={content_id}>
                         <AddIcon />
                     </IconButton>
                     <span style={{ fontSize: "16pt" }}>{target_name}</span>
                 </div>
-            </li><li className={clsx(styles.fullwidth, styles.is_hidden)} id="modal-share-date">
+            </li><li className={clsx(styles.fullwidth, styles.is_hidden)} id={content_id} key={content_id + "_body"} >
                 {image ?? null}
                 {body}
             </li>

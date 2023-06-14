@@ -25,7 +25,8 @@
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-map-gl": "^7.0.19"
+    "react-map-gl": "^7.0.19",
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "eslint": "latest",
