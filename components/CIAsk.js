@@ -2,7 +2,6 @@ import * as React from 'react';
 import slugify from 'slugify';
 
 import clsx from "clsx";
-import Image from 'next/image';
 import styles from "./CIAsk.module.scss";
 
 import AddIcon from '@mui/icons-material/Add';
@@ -14,7 +13,7 @@ import {
 
 export default function ({ target_name, targets, image, body }) {
     const content_id = slugify(target_name)
-    const [expanded] = React.useState([])
+    const [expanded, setExpanded] = React.useState(false)
 
     const openQuickView = (toggle, fullwidth) => {
         toggle.setAttribute('aria-expanded', 'true');
@@ -40,13 +39,7 @@ export default function ({ target_name, targets, image, body }) {
         } else {
             closeQuickView(toggle, content)
         }
-    }
-
-    var clickCloseQuickView = (e) => {
-        const toggle = e.target
-        const toggleParent = toggle.parentElement
-
-        closeQuickView(toggle, toggleParent)
+        setExpanded(!expanded)
     }
 
     return (
@@ -54,11 +47,12 @@ export default function ({ target_name, targets, image, body }) {
             <li className={styles.target_name} key={content_id}>
                 <div className={styles.d_flex}>
                     <IconButton size="small" onClick={clickOpenQuickView} data-content-id={content_id}>
-                        <AddIcon />
+                        {expanded ? <CloseIcon /> : <AddIcon />}
                     </IconButton>
                     <span style={{ fontSize: "16pt" }}>{target_name}</span>
                 </div>
-            </li><li className={clsx(styles.fullwidth, styles.is_hidden)} id={content_id} key={content_id + "_body"} >
+            </li>
+            <li className={clsx(styles.fullwidth, styles.is_hidden)} id={content_id} key={content_id + "_body"} >
                 {image ?? null}
                 {body}
             </li>
