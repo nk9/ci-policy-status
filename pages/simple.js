@@ -101,8 +101,11 @@ export default function Simple() {
                 />
                 <CIAsk
                     target_name="Modal Share"
-                    targets={["85%?", "85%?", "90%?"]}
-                    body={<Typography variant="body1">Each year, TfL publishes figures about the sustainable modal share in each borough. [-ed More needed…]</Typography>}
+                    targets={["85%", "85%", "90%"]}
+                    body={<>
+                        <Typography variant="body1">Each year, TfL publishes figures about how people are getting around the capital. The most recent survey available is from 2021, and it showed that Islington has a <Link href="https://www.healthystreetsscorecard.london/results/results_outcome_indicators/#ResultsModeshare">sustainable modal share of 85%</Link>.</Typography>
+                        <Typography variant="body1">Every borough needs to do their part to meet overall climate targets. Fortunately, here in Islington, there are still many opportunities to transition car journies to a sustainable mode.</Typography>
+                    </>}
                 />
                 <li className={styles.section_header}>
                     2. People Friendly Streets
