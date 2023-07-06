@@ -11,68 +11,88 @@ import boundaries from '/public/static/gis/islington-ward-boundaries.geojson'
 import protectedSegments from '/public/static/gis/protected-segments.geojson'
 import majorRoads from '/public/static/gis/major-roads.geojson'
 import ltns from '/public/static/gis/islington-ltns-post-2020.geojson'
+import hubs from '/public/static/gis/logistics-hubs.geojson'
+import WarehouseIcon from '@mui/icons-material/Warehouse';
 
 export default function CIMap() {
-    const layerIDs = ['boundaries', 'ltns', 'majorRoads', 'protectedSegments']
+    const layers = {
+        boundaries: {
+            layer: boundaries,
+            style: {
+                'id': 'boundaries',
+                'type': 'fill',
+                'paint': {
+                    'fill-color': "#111",
+                    'fill-opacity': 0.1
+                }
+            }
+        },
+        ltns: {
+            layer: ltns,
+            interactive: true,
+            style: {
+                'id': 'ltns',
+                'type': 'fill',
+                'paint': {
+                    'fill-color': "#248747",
+                    'fill-opacity': 0.2
+                }
+            } 
+        },
+        majorRoads: {
+            layer: majorRoads,
+            interactive: true,
+            style: {
+                'id': 'majorRoads',
+                'type': 'line',
+                'paint': {
+                    'line-width': 2,
+                    'line-color': ["case", ["in", "Primary Road", ["string", ["get", "CLASSIFICA"]]],
+                        "#000",
+                        "#B0B0B0"
+                    ]
+                }
+            } 
+        },
+        protectedSegments: {
+            layer: protectedSegments,
+            interactive: true,
+            style: {
+                'id': 'protectedSegments',
+                'type': 'line',
+                'paint': {
+                    'line-width': 4,
 
-    const data = {
-        'boundaries': boundaries,
-        'protectedSegments': protectedSegments,
-        'majorRoads': majorRoads,
-        'ltns': ltns
+                    // Show single-sided segments as dashed
+                    'line-dasharray': ["case", ["==", ["get", "bidi"], 0],
+                        ["literal", [1, 1]],
+                        ["literal", [1]]
+                    ],
+
+                    // Show TfL segments as a different color
+                    'line-color': ["case", ["==", ["get", "tfl"], 0],
+                        "#13941A",
+                        "#411AFF"
+                    ]
+                }
+            }
+        },
+        hubs: {
+            layer: hubs,
+            interactive: true,
+            style: {
+                'id': 'hubs',
+                'type': 'symbol',
+                'paint': {
+                    'icon-color': "rebeccapurple",
+                    'icon-opacity': 0.8
+                },
+                // 'layout': {
+                //     'icon-image': WarehouseIcon
+                // }
+            }
+        } 
     }
-
-    const layerStyles = {
-        'boundaries': {
-            'id': 'boundaries',
-            'type': 'fill',
-            'paint': {
-                'fill-color': "#111",
-                'fill-opacity': 0.1
-            }
-        },
-        'ltns': {
-            'id': 'ltns',
-            'type': 'fill',
-            'paint': {
-                'fill-color': "#248747",
-                'fill-opacity': 0.2
-            }
-        },
-        'protectedSegments': {
-            'id': 'protectedSegments',
-            'type': 'line',
-            'paint': {
-                'line-width': 4,
-
-                // Show single-sided segments as dashed
-                'line-dasharray': ["case", ["==", ["get", "bidi"], 0],
-                    ["literal", [1, 1]],
-                    ["literal", [1]]
-                ],
-
-                // Show TfL segments as a different color
-                'line-color': ["case", ["==", ["get", "tfl"], 0],
-                    "#13941A",
-                    "#411AFF"
-                ]
-            }
-        },
-        'majorRoads': {
-            'id': 'majorRoads',
-            'type': 'line',
-            'paint': {
-                'line-width': 2,
-                'line-color': ["case", ["in", "Primary Road", ["string", ["get", "CLASSIFICA"]]],
-                    "#000",
-                    "#B0B0B0"
-                ]
-            }
-        }
-    }
-
-    const initialState = {};
-    layerIDs.forEach((layerID) => initialState[layerID] = true);
 
     const [layersVisibility, setLayersVisibility] = React.useReducer((state, updates) => ({ ...state, ...updates }),
         {});
@@ -91,16 +111,20 @@ export default function CIMap() {
         }
     }, []);
 
-    const layers = [];
+    const mapLayers = [];
+    var interactiveLayerIds = [];
 
-    for (const layerID of layerIDs) {
-        layers.push(
-            <Source key={layerID} type="geojson" data={data[layerID]}>
+    for (const [layerID, { layer, interactive, style }] of Object.entries(layers)) {
+        mapLayers.push(
+            <Source key={layerID} type="geojson" data={layer}>
                 <Layer key={layerID}
-                    {...layerStyles[layerID]}
+                    {...style}
                     layout={{ visibility: layersVisibility[layerID] }} />
             </Source>
         )
+        if (interactive) {
+            interactiveLayerIds.push(layerID)
+        }
     }
 
     return (
@@ -116,9 +140,9 @@ export default function CIMap() {
                 styleDiffing
                 mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
                 onMouseMove={onHover}
-                interactiveLayerIds={['protectedSegments', 'ltns']}
+                interactiveLayerIds={interactiveLayerIds}
             >
-                {layers}
+                {mapLayers}
                 {hoveredFeature && preparePopover(hoverInfo, hoveredFeature, styles)}
 
                 <ScaleControl />
@@ -159,6 +183,7 @@ function preparePopover(hoverInfo, feature, styles) {
                 "Open as of": prettyDate(props.begin)
             }
             break;
+        default: return
     }
 
     let infoDivs = []

@@ -132,7 +132,7 @@ export default function Simple() {
                 </li>
                 <CIAsk
                     target_name="Logistics Hub Count"
-                    targets={["1", "1", "10"]}
+                    targets={["2", "2", "10"]}
                     image={
                         <Image src="/static/images/pedal-me.jpg"
                             layout="intrinsic"
