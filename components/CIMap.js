@@ -82,14 +82,13 @@ export default function CIMap() {
             interactive: true,
             style: {
                 'id': 'hubs',
-                'type': 'symbol',
+                'type': 'circle',
                 'paint': {
-                    'icon-color': "rebeccapurple",
-                    'icon-opacity': 0.8
+                    'circle-color': "rebeccapurple",
+                    'circle-opacity': 0.8,
+                    'circle-stroke-width': 2,
+                    'circle-stroke-color': "white"
                 },
-                // 'layout': {
-                //     'icon-image': WarehouseIcon
-                // }
             }
         } 
     }
@@ -183,6 +182,13 @@ function preparePopover(hoverInfo, feature, styles) {
                 "Open as of": prettyDate(props.begin)
             }
             break;
+        case "hubs":
+            headline = "Cycle Logistics Hub"
+            infoPairs = {
+                "Name": props.name,
+                "Open as of": prettyDate(props.begin)
+            }
+            break;
         default: return
     }
 
@@ -196,7 +202,6 @@ function preparePopover(hoverInfo, feature, styles) {
 
     return (
         <Popup
-            anchor="right"
             longitude={hoverInfo.longitude}
             latitude={hoverInfo.latitude}
             closeButton={false}

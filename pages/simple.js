@@ -132,7 +132,7 @@ export default function Simple() {
                 </li>
                 <CIAsk
                     target_name="Logistics Hub Count"
-                    targets={["2", "2", "10"]}
+                    targets={["1", "1", "10"]}
                     image={
                         <Image src="/static/images/pedal-me.jpg"
                             layout="intrinsic"
@@ -141,10 +141,7 @@ export default function Simple() {
                             alt="An electric cargo bike with a trailer moving a large load." />
                     }
                     body={
-                        <Typography variant="body1">Motor-powered logistics is causing pollution and danger to our borough. We asked the council
-                            the creation of at least ten hubs, possibly on Council property, where all freight is delivered
-                            for final delivery by non-polluting, sustainable means – with a target date: May 2026. They pledged
-                            to “work to make deliveries more sustainable including by providing last mile delivery hubs”.</Typography>
+                        <Typography variant="body1">Motor-powered logistics is causing pollution and danger to our borough, and the huge increase in online deliveries means that these vans make up a growing percentage of the traffic on our roads. We asked the Council to create at least ten hubs, possibly on Council property, where freight is delivered for final delivery to customers by non-polluting, sustainable means. We included a target date of May 2026.</Typography>
                     }
                 />
                 <li className={styles.section_header}>
