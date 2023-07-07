@@ -127,27 +127,25 @@ export default function CIMap() {
     }
 
     return (
-        <>
-            <Map
-                initialViewState={{
-                    longitude: -0.114835,
-                    latitude: 51.545553,
-                    zoom: 11.5
-                }}
-                style={{ width: "100%", height: 400 }}
-                mapStyle="mapbox://styles/nkocharh/cjt18tus00ly51fmu051jdav4"
-                styleDiffing
-                mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
-                onMouseMove={onHover}
-                interactiveLayerIds={interactiveLayerIds}
-            >
-                {mapLayers}
-                {hoveredFeature && preparePopover(hoverInfo, hoveredFeature, styles)}
+        <Map
+            initialViewState={{
+                longitude: -0.114835,
+                latitude: 51.545553,
+                zoom: 11.5
+            }}
+            style={{ width: "100%", height: 400 }}
+            mapStyle="mapbox://styles/nkocharh/cjt18tus00ly51fmu051jdav4"
+            styleDiffing
+            mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN}
+            onMouseMove={onHover}
+            interactiveLayerIds={interactiveLayerIds}
+        >
+            {mapLayers}
+            {hoveredFeature && preparePopover(hoverInfo, hoveredFeature, styles)}
 
-                <ScaleControl />
-                <ControlPanel onChange={setLayersVisibility} />
-            </Map>
-        </>
+            <ScaleControl />
+            <ControlPanel onChange={setLayersVisibility} />
+        </Map>
     )
 }
 
