@@ -182,7 +182,7 @@ export default function Simple() {
                     target_name="Proportion of Lane Kilometres"
                     targets={["9%", "9%", "100%"]}
                     image={
-                        <Image src="/static/images/pedal-me.jpg"
+                        <Image src="/static/images/cycle-tracks.jpg"
                             layout="intrinsic"
                             width="900"
                             height="200"
