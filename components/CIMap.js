@@ -219,7 +219,7 @@ function preparePopover(hoverInfo, feature, styles) {
 function prettyDate(isoDate) {
     if (isoDate) {
         const date = new Date(isoDate)
-        return new Intl.DateTimeFormat('en-GB', { dateStyle: 'medium' }).format(date)
+        return new Intl.DateTimeFormat('en-GB', { month: 'short', year: 'numeric' }).format(date)
     }
 
     return '';
