@@ -112,7 +112,7 @@ export default function Simple() {
                 </li>
                 <CIAsk
                     target_name="Borough Coverage"
-                    targets={["20%?", "20%?", "100%"]}
+                    targets={["21%", "21%", "100%"]}
                     image={
                         <Image src="/static/images/LTNs.jpg"
                             layout="intrinsic"
@@ -180,7 +180,7 @@ export default function Simple() {
                 </li>
                 <CIAsk
                     target_name="Proportion of Lane Kilometres"
-                    targets={["5", "5", "60"]}
+                    targets={["9%", "9%", "100%"]}
                     image={
                         <Image src="/static/images/pedal-me.jpg"
                             layout="intrinsic"
@@ -190,10 +190,9 @@ export default function Simple() {
                     }
                     body={
                         <>
-                            <Typography variant="body1">We have asked the council to install protected cycle routes on all busy roads in the borough by 2026.
-                                They pledged to “build on the LTNs and 3 segregated cycle routes installed in the past two years.” [NOTE: is this correct?]</Typography>
-                            <Typography variant="body1" mt={2}>We are following-up the building of these routes, according to the authority in charge (TfL, Islington,
-                                or surrounding boroughs).</Typography>
+                            <Typography variant="body1">In 2020, Islington showed real initiative by quickly installing a cycle track on Liverpool Road using light segregation. This was the southern section of the <Link href="https://www.islington.media/news/new-finsbury-park-to-highbury-fields-cycleway-helps-create-greener-islington">Cycleway 38 scheme</Link>.</Typography>
+                            <Typography variant="body1">We have asked the council to keep up a rapid pace of work to transform the way people are able to get around the borough by installing protected cycle tracks on all busy roads in the borough by 2026.</Typography>
+                            <Typography variant="body1" mt={2}>We are following-up the building of these routes, according to the authority in charge (TfL, Islington, or surrounding boroughs).</Typography>
                         </>
                     }
                 />
