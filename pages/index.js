@@ -88,10 +88,10 @@ export default function Home() {
                 }
             />
             <div className={styles.section_header}>
-                3. Cycle Logistics
+                3. Cycle Delivery Hubs
             </div>
             <CIAsk
-                target_name="Logistics Hub Count"
+                target_name="Hub Count"
                 targets={["1", "1", "10"]}
                 image={
                     <Image src="/static/images/pedal-me.jpg"
@@ -139,7 +139,7 @@ export default function Home() {
                 5. Cycle Tracks on Main Roads
             </div>
             <CIAsk
-                target_name="Proportion of Lane Kilometres"
+                target_name="Proportion with Cycle Tracks"
                 targets={["9%", "9%", "100%"]}
                 image={
                     <Image src="/static/images/cycle-tracks.jpg"
