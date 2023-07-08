@@ -18,8 +18,15 @@ export default function Home() {
         <Container maxWidth="md" sx={{ px: 0 }} className='hagrid'>
             <Box sx={{ my: 4, px: 2 }}>
                 <Typography variant="h3" gutterBottom>
-                    Cycle Islington Policy Observatory
+                    Tracking Our Five Asks
                 </Typography>
+                <Image
+                    src="/static/images/kids.jpg"
+                    layout="intrinsic"
+                    width="900"
+                    height="600"
+                    alt="A father rides a Christiania tricycle with a baby on board while three primary school–aged children cycle with him."
+                />
                 <Typography variant="body1">In the 2022 election, Cycle Islington chose five policy priorities, our <Link href="https://cycleislington.uk/2021/five-asks-election-2022/" color="secondary">Five Asks</Link>,
                     to help ensure that whichever party was elected would accelerate the borough's transition to a
                     low-carbon future. In their <Link href="https://www.islington-labour.org.uk/2022-manifesto/" color="secondary">election manifesto</Link>,
