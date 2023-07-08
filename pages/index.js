@@ -46,8 +46,7 @@ export default function Home() {
                     Islington Labour pledged to ensure that "local people can get on their bike and get cycling safely around Islington."
                 </Typography>
 
-                <Typography variant="body1" mt={2}>We are tracking the Council's progress toward this commitment. Here is our citizen assessment
-                    of their progress so far.</Typography>
+                <Typography variant="body1" mt={2}>We are tracking the Council's progress toward this commitment. Here is our assessmentof their progress so far.</Typography>
             </Box>
 
             {header("1. Sustainable Transport Modal Share")}
@@ -93,7 +92,7 @@ export default function Home() {
             />
 
             {header("3. Cycle Delivery Hubs")}
-            
+
             <CIAsk
                 target_name="Hub Count"
                 targets={["1", "1", "10"]}
