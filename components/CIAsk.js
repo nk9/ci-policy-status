@@ -46,7 +46,11 @@ export default function ({ target_name, targets, image, body }) {
         <>
             <li className={styles.target_name} key={content_id}>
                 <div className={styles.d_flex}>
-                    <IconButton size="small" onClick={clickOpenQuickView} data-content-id={content_id}>
+                    <IconButton
+                        size="small"
+                        onClick={clickOpenQuickView}
+                        data-content-id={content_id}
+                        sx={{ height: 'max-content' }}>
                         {expanded ? <CloseIcon /> : <AddIcon />}
                     </IconButton>
                     <span style={{ fontSize: "16pt" }}>{target_name}</span>
