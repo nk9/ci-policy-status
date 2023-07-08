@@ -1,4 +1,4 @@
-// body {
-//     margin: 0;
-//     padding: 0;
-// }
+// Gaps between paragraphs
+.MuiAccordionDetails-root .MuiTypography-body1+.MuiTypography-body1 {
+    padding-top: 8px;
+}

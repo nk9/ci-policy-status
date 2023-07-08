@@ -14,6 +14,15 @@ import {
 
 
 export default function Home() {
+    let statsLegend = (
+        <Box sx={{ display: 'flex', mx: '10px' }}>
+            <Typography sx={{ flex: 1 }}>&nbsp;</Typography>
+            <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>2022</Typography>
+            <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>Now</Typography>
+            <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold', }}>Ask</Typography>
+        </Box>
+    )
+
     return (
         <Container maxWidth="md" sx={{ px: 0 }} className='hagrid'>
             <Box sx={{ my: 4, px: 2 }}>
@@ -33,20 +42,24 @@ export default function Home() {
                     Islington Labour pledged to ensure that "local people can get on their bike and get cycling safely around Islington."
                 </Typography>
 
-                <Typography variant="body1" mt={2}>We are tracking the council's progress toward this commitment. Here is our citizen assessment
+                <Typography variant="body1" mt={2}>We are tracking the Council's progress toward this commitment. Here is our citizen assessment
                     of their progress so far.</Typography>
-            </Box>
-
-            <Box sx={{ display: 'flex', mx: '10px' }}>
-                <Typography sx={{ flex: 1 }}>&nbsp;</Typography>
-                <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>Then</Typography>
-                <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>Now</Typography>
-                <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>Aim</Typography>
             </Box>
 
             <div className={styles.section_header}>
                 1. Sustainable Transport Modal Share
             </div>
+            {statsLegend}
+
+            <CIAsk
+                target_name="Modal Share"
+                targets={["85%", "85%", "90%"]}
+                body={<>
+                    <Typography variant="body1">TfL publishes yearly figures about how people are getting around the capital. This lets us determine how many journeys are made with sustainable modes (Tube, bus, walking, cycling, etc) and all others (e.g. private car). The most recent survey available is from 2021, and it showed that Islington has a <Link href="https://www.healthystreetsscorecard.london/results/results_outcome_indicators/#ResultsModeshare">sustainable modal share of 85%</Link>.</Typography>
+                    <Typography variant="body1">Every borough needs to do their part to meet overall climate targets. Fortunately, here in Islington, there are still many opportunities increase the share of trips made without a private car.</Typography>
+                </>}
+            />
+
             <CIAsk
                 target_name="Target Date"
                 targets={["2041", "2041", "2030"]}
@@ -55,21 +68,13 @@ export default function Home() {
                     width="900"
                     height="200"
                     alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />}
-                body={<Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable
-                    transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to
-                    increase the sustainable modal share”.</Typography>}
-            />
-            <CIAsk
-                target_name="Modal Share"
-                targets={["85%", "85%", "90%"]}
-                body={<>
-                    <Typography variant="body1">Each year, TfL publishes figures about how people are getting around the capital. The most recent survey available is from 2021, and it showed that Islington has a <Link href="https://www.healthystreetsscorecard.london/results/results_outcome_indicators/#ResultsModeshare">sustainable modal share of 85%</Link>.</Typography>
-                    <Typography variant="body1">Every borough needs to do their part to meet overall climate targets. Fortunately, here in Islington, there are still many opportunities to transition car journies to a sustainable mode.</Typography>
-                </>}
+                body={<Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to increase the sustainable modal share”.</Typography>}
             />
             <div className={styles.section_header}>
                 2. People Friendly Streets
             </div>
+            {statsLegend}
+
             <CIAsk
                 target_name="Borough Coverage"
                 targets={["21%", "21%", "100%"]}
@@ -81,15 +86,16 @@ export default function Home() {
                         alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />
                 }
                 body={
-                    <Typography variant="body1">We have asked the council to cover the borough with “no-through traffic areas” (Low-Traffic
-                        Neighbourhoods) to cover the borough by 2024. They said they are “committed to … creating
-                        liveable neighbourhoods across the borough including with people-friendly pavements and more
-                        greening”. (Manifesto page 23)</Typography>
+                    <>
+                        <Typography variant="body1">Low-Traffic Neighbourhoods make it both appealing and possible for the broadest number of people to get around without a car. Academic research has shown that <Link href="https://www.healthystreetsscorecard.london/imperial-college-londons-ltn-air-quality-study/">low-traffic streets improve overall air quality</Link> and <Link href="https://www.theguardian.com/world/2021/jul/23/low-traffic-schemes-halve-number-of-road-injuries-study-shows">reduce road danger</Link>.</Typography>
+                        <Typography variant="body1">Islington has already determined that <Link href="https://www.islington.gov.uk/~/media/sharepoint-lists/public-records/energyservices/businessplanning/strategies/20202021/20201209vision2030islingtonzerocarbonstrategy1.pdf">100% of its transport emissions must be removed</Link> to meet its aggressive <Link href="https://www.islington.gov.uk/environment-and-energy/climate-emergency">Net Zero by 2030</Link> goals. Since the easiest, cheapest, and most equitable way to reach a low-carbon future is to reduce traffic, we asked the Council to cover the borough with Low-Traffic Neighbourhoods by 2024.</Typography>
+                    </>
                 }
             />
             <div className={styles.section_header}>
                 3. Cycle Delivery Hubs
             </div>
+            {statsLegend}
             <CIAsk
                 target_name="Hub Count"
                 targets={["1", "1", "10"]}
@@ -105,10 +111,11 @@ export default function Home() {
                 }
             />
             <div className={styles.section_header}>
-                4. Secure Cycle Parking
+                4. Affordable Cycle Parking
             </div>
+            {statsLegend}
             <CIAsk
-                target_name="Cycle vs. Car: Which is Cheaper to Park?"
+                target_name="Which is Cheaper to Park?"
                 targets={["Car", "Car", "Cycle"]}
                 image={
                     <Image src="/static/images/bike-hangar.jpg"
@@ -119,25 +126,22 @@ export default function Home() {
                 }
                 body={
                     <>
-                        <Typography variant="body1">Islington installed its first bike hangar in 2016, and has kept increasing that count over the years.The <Link href="https://www.islington.media/news/islington-council-unveils-400th-bike-hangar-as-vision-for-cleaner-greener-healthier-borough-continues">400th was installed in March 2022</Link>, and they planned to have over 500 by March 2023.
+                        <Typography variant="body1">Islington installed their <Link href="https://www.islington.media/news/islington-council-unveils-400th-bike-hangar-as-vision-for-cleaner-greener-healthier-borough-continues">400th bike hangar in March 2022</Link>. However, using this secure, on-street bike storage is still too expensive.
                         </Typography>
-                        <Typography variant='body1'>Delivering bike hangars is only part of the equation, though. In order for everyone who needs one to be able to take advantage of secure, on-street bike storage, hangars need to be affordable and spaces have to be available with as little wait as possible.
-                        </Typography>
-                        <Typography variant='body1'>As of 2023, <Link href="https://www.islington.gov.uk/roads/cycling/cycleparking">the council charges an up-front fee of £107.25</Link> per year to rent a bike hangar space, plus a refundable key deposit of £27.75. It's only possible to buy a full year, and the fee isn't refundable if you move midway through the year. The cost is also per bike, which means that a family of 4 could find themselves paying over £500 to store their bikes.
+                        <Typography variant='body1'>As of 2023, <Link href="https://www.islington.gov.uk/roads/cycling/cycleparking">the Council charges an up-front fee of £107.25</Link> per year to rent a bike hangar space, plus a refundable key deposit of £27.75. It's only possible to buy a full year, and the fee isn't refundable if you move midway through the year. This means that a family of 4 has to pay over £500 to store their bikes.
                         </Typography>
                         <Typography variant='body1'>
-                            Some electric car permits, by contrast, cost just <Link href="https://www.islington.gov.uk/parking/parking-permits/parking-permit-costs-table">£50 per year</Link> or £4.17 per month. Some petrol vehicles are even £100 per year, again with no premium on monthly permits.
+                            Some electric car permits, by contrast, cost just <Link href="https://www.islington.gov.uk/parking/parking-permits/parking-permit-costs-table">£50 per year</Link> or £4.17 per month. And some petrol vehicles cost only £100 per year, again with no premium on monthly permits.
                         </Typography>
                         <Typography variant='body1'>
-                            We have asked Islington to deliver secure, affordable,
-                            and flexible bike parking and ensure that it is never cheaper to park a car or van than to park a
-                            cycle.They have pledged to <em>“Invest in secure cycle storage with enough space to meet demand and cut costs of bike storage for lower-income households”.</em> (Manifesto, page 13.)</Typography>
+                            We have asked Islington to deliver secure, affordable, and flexible bike parking and ensure that it is never cheaper to park a car or van than to park a cycle.</Typography>
                     </>
                 }
             />
             <div className={styles.section_header}>
                 5. Cycle Tracks on Main Roads
             </div>
+            {statsLegend}
             <CIAsk
                 target_name="Proportion with Cycle Tracks"
                 targets={["9%", "9%", "100%"]}
@@ -150,9 +154,8 @@ export default function Home() {
                 }
                 body={
                     <>
-                        <Typography variant="body1">In 2020, Islington showed real initiative by quickly installing a cycle track on Liverpool Road using light segregation. This was the southern section of the <Link href="https://www.islington.media/news/new-finsbury-park-to-highbury-fields-cycleway-helps-create-greener-islington">Cycleway 38 scheme</Link>.</Typography>
-                        <Typography variant="body1">We have asked the council to keep up a rapid pace of work to transform the way people are able to get around the borough by installing protected cycle tracks on all busy roads in the borough by 2026.</Typography>
-                        <Typography variant="body1" mt={2}>We are following-up the building of these routes, according to the authority in charge (TfL, Islington, or surrounding boroughs).</Typography>
+                        <Typography variant="body1">In 2020, Islington showed real initiative by quickly installing a cost-effective cycle track on Liverpool Road. This was the southern section of the <Link href="https://www.islington.media/news/new-finsbury-park-to-highbury-fields-cycleway-helps-create-greener-islington">Cycleway 38 scheme</Link>.</Typography>
+                        <Typography variant="body1">We have asked the Council to keep it up and work with relevant authorities to install cycle tracks on all busy roads in the borough by 2026.</Typography>
                     </>
                 }
             />
