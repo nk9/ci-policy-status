@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 const hideableLayers = {
     'protectedSegments': { fullName: "Protected Tracks", shortName: "Tracks" },
     'majorRoads': { fullName: "Major Roads", shortName: "Roads" },
-    'ltns': { fullName: "Healthy Neighbourhoods", shortName: "LTNs" },
+    'ltns': { fullName: "Low-Traffic Neighbourhoods", shortName: "LTNs" },
     'hubs': { fullName: "Cycle Logistics Hubs", shortName: "Hubs" }
 }
 
