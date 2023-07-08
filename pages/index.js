@@ -71,7 +71,7 @@ export default function Home() {
                 body={<Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to increase the sustainable modal share”.</Typography>}
             />
             <div className={styles.section_header}>
-                2. People Friendly Streets
+                2. Low-Traffic Neighbourhoods
             </div>
             {statsLegend}
 
@@ -143,7 +143,7 @@ export default function Home() {
             </div>
             {statsLegend}
             <CIAsk
-                target_name="Proportion with Cycle Tracks"
+                target_name="Cycle Track Coverage"
                 targets={["9%", "9%", "100%"]}
                 image={
                     <Image src="/static/images/cycle-tracks.jpg"
