@@ -21,4 +21,11 @@
   label {
     margin-left: 5px;
   }
+
+}
+
+@media (max-width: 768px) {
+  .control-panel {
+    width: 6rem;
+  }
 }

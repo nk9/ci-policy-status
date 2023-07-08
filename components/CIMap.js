@@ -84,7 +84,7 @@ export default function CIMap() {
                 'id': 'hubs',
                 'type': 'circle',
                 'paint': {
-                    'circle-color': "rebeccapurple",
+                    'circle-color': "red",
                     'circle-opacity': 0.8,
                     'circle-stroke-width': 2,
                     'circle-stroke-color': "white"

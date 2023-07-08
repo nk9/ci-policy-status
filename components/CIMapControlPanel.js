@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CIMapControlPanel.module.scss";
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const hideableLayers = {
-    'protectedSegments': "Protected Tracks",
-    'majorRoads': "Major Roads",
-    'ltns': "Healthy Neighbourhoods",
-    'hubs': "Cycle Logistics Hubs"
+    'protectedSegments': { fullName: "Protected Tracks", shortName: "Tracks" },
+    'majorRoads': { fullName: "Major Roads", shortName: "Roads" },
+    'ltns': { fullName: "Healthy Neighbourhoods", shortName: "LTNs" },
+    'hubs': { fullName: "Cycle Logistics Hubs", shortName: "Hubs" }
 }
 
 function ControlPanel(props) {
@@ -28,11 +29,13 @@ function ControlPanel(props) {
     const onVisibilityChange = (name, value) => {
         setVisibility({ ...visibility, [name]: value });
     };
+    
+    const useShortName = useMediaQuery('(max-width: 768px)');
 
     return (
         <div className={styles["control-panel"]}>
             <h3>Layers</h3>
-            {Object.entries(hideableLayers).map(([layerID, displayName]) => (
+            {Object.entries(hideableLayers).map(([layerID, { fullName, shortName }]) => (
                 <div key={layerID} className="input">
                     <input
                         id={layerID}
@@ -40,7 +43,7 @@ function ControlPanel(props) {
                         checked={visibility[layerID]}
                         onChange={evt => onVisibilityChange(layerID, evt.target.checked)}
                     />
-                    <label htmlFor={layerID}>{displayName}</label>
+                    <label htmlFor={layerID}>{useShortName ? shortName : fullName}</label>
                 </div>
             ))}
         </div>
