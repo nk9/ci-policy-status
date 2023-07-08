@@ -14,14 +14,18 @@ import {
 
 
 export default function Home() {
-    let statsLegend = (
-        <Box sx={{ display: 'flex', mx: '10px' }}>
-            <Typography sx={{ flex: 1 }}>&nbsp;</Typography>
-            <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>2022</Typography>
-            <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>Now</Typography>
-            <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold', }}>Ask</Typography>
-        </Box>
-    )
+    const header = (title) => {
+        return (
+            <Box className={styles.section_header} sx={{ position: "relative" }}>
+                {title}
+                <Box sx={{ display: 'flex', position: 'absolute', right: '0', bottom: '0', pr: 1.5 }}>
+                    <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>2022</Typography>
+                    <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>Now</Typography>
+                    <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold', }}>Ask</Typography>
+                </Box >
+            </Box>
+        )
+    }
 
     return (
         <Container maxWidth="md" sx={{ px: 0 }} className='hagrid'>
@@ -46,10 +50,7 @@ export default function Home() {
                     of their progress so far.</Typography>
             </Box>
 
-            <div className={styles.section_header}>
-                1. Sustainable Transport Modal Share
-            </div>
-            {statsLegend}
+            {header("1. Sustainable Transport Modal Share")}
 
             <CIAsk
                 target_name="Modal Share"
@@ -70,10 +71,8 @@ export default function Home() {
                     alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />}
                 body={<Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to increase the sustainable modal share”.</Typography>}
             />
-            <div className={styles.section_header}>
-                2. Low-Traffic Neighbourhoods
-            </div>
-            {statsLegend}
+
+            {header("2. Low-Traffic Neighbourhoods")}
 
             <CIAsk
                 target_name="Borough Coverage"
@@ -92,10 +91,9 @@ export default function Home() {
                     </>
                 }
             />
-            <div className={styles.section_header}>
-                3. Cycle Delivery Hubs
-            </div>
-            {statsLegend}
+
+            {header("3. Cycle Delivery Hubs")}
+            
             <CIAsk
                 target_name="Hub Count"
                 targets={["1", "1", "10"]}
@@ -110,10 +108,9 @@ export default function Home() {
                     <Typography variant="body1">Motor-powered logistics is causing pollution and danger to our borough, and the huge increase in online deliveries means that these vans make up a growing percentage of the traffic on our roads. We asked the Council to create at least ten hubs, possibly on Council property, where freight is delivered for final delivery to customers by non-polluting, sustainable means. We included a target date of May 2026.</Typography>
                 }
             />
-            <div className={styles.section_header}>
-                4. Affordable Cycle Parking
-            </div>
-            {statsLegend}
+
+            {header("4. Affordable Cycle Parking")}
+
             <CIAsk
                 target_name="Which is Cheaper to Park?"
                 targets={["Car", "Car", "Cycle"]}
@@ -138,10 +135,9 @@ export default function Home() {
                     </>
                 }
             />
-            <div className={styles.section_header}>
-                5. Cycle Tracks on Main Roads
-            </div>
-            {statsLegend}
+
+            {header("5. Cycle Tracks on Main Roads")}
+
             <CIAsk
                 target_name="Cycle Track Coverage"
                 targets={["9%", "9%", "100%"]}
