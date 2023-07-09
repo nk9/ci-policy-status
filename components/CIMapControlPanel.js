@@ -9,25 +9,32 @@ const hideableLayers = {
     'hubs': { fullName: "Cycle Logistics Hubs", shortName: "Hubs" }
 }
 
-function ControlPanel(props) {
-    const [visibility, setVisibility] = useState({
-        boundaries: true,
-        protectedSegments: true,
-        majorRoads: true,
-        ltns: true,
-        hubs: true
-    });
+// When the hideable layer above has its visibility toggled, also
+// toggle this other layer
+const pairedLayers = {
+    'protectedSegments': 'protectedSegmentsHover'
+}
+
+function ControlPanel({ layers, onChange }) {
+    let defaultVisibility = Object.fromEntries(Object.keys(layers).map((key) => [key, true]))
+    const [visibility, setVisibility] = useState(defaultVisibility);
 
     useEffect(() => {
         // Convert true/false to "visible"/"none"
         const visibilityState = Object.fromEntries(
             Object.entries(visibility).map(([k, v]) => [k, v ? "visible" : "none"])
         );
-        props.onChange(visibilityState);
+        onChange(visibilityState);
     }, [visibility]);
 
     const onVisibilityChange = (name, value) => {
-        setVisibility({ ...visibility, [name]: value });
+        var newVisibility = { ...visibility, [name]: value }
+
+        if (Object.hasOwn(pairedLayers, name)) {
+            newVisibility[pairedLayers[name]] = value
+        }
+
+        setVisibility(newVisibility);
     };
     
     const useShortName = useMediaQuery('(max-width: 768px)');

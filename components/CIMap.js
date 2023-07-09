@@ -41,7 +41,7 @@ export default function CIMap() {
         },
         majorRoads: {
             layer: majorRoads,
-            interactive: true,
+            interactive: false,
             style: {
                 'id': 'majorRoads',
                 'type': 'line',
@@ -56,7 +56,7 @@ export default function CIMap() {
         },
         protectedSegments: {
             layer: protectedSegments,
-            interactive: true,
+            interactive: false,
             style: {
                 'id': 'protectedSegments',
                 'type': 'line',
@@ -74,6 +74,18 @@ export default function CIMap() {
                         "#13941A",
                         "#411AFF"
                     ]
+                }
+            }
+        },
+        protectedSegmentsHover: {
+            layer: protectedSegments,
+            interactive: true,
+            style: {
+                'id': 'protectedSegmentsHover',
+                'type': 'line',
+                'paint': {
+                    'line-width': 10,
+                    'line-opacity': 0
                 }
             }
         },
@@ -144,7 +156,7 @@ export default function CIMap() {
             {hoveredFeature && preparePopover(hoverInfo, hoveredFeature, styles)}
 
             <ScaleControl />
-            <ControlPanel onChange={setLayersVisibility} />
+            <ControlPanel layers={layers} onChange={setLayersVisibility} />
         </Map>
     )
 }
@@ -155,7 +167,7 @@ function preparePopover(hoverInfo, feature, styles) {
     let props = feature.properties
 
     switch (feature.layer.id) {
-        case "protectedSegments":
+        case "protectedSegmentsHover":
             headline = "Cycle Track"
             const meters = (lineLength(feature) * 1000) || 0;
             let length = meters;
