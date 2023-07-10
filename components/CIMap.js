@@ -3,9 +3,9 @@ import React from "react";
 import Map, { Popup, Source, Layer, ScaleControl } from 'react-map-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import lineLength from '@turf/length';
-import polygonArea from '@turf/area';
 import styles from "./CIMap.module.scss";
 import ControlPanel from './CIMapControlPanel';
+import { deepMerge } from 'src/utilities';
 
 import boundaries from '/public/static/gis/islington-ward-boundaries.geojson'
 import protectedSegments from '/public/static/gis/protected-segments.geojson'
@@ -94,13 +94,14 @@ export default function CIMap() {
             interactive: true,
             style: {
                 'id': 'hubs',
-                'type': 'circle',
+                'type': 'symbol',
                 'paint': {
-                    'circle-color': "red",
-                    'circle-opacity': 0.8,
-                    'circle-stroke-width': 2,
-                    'circle-stroke-color': "white"
+                    'icon-color': "red",
+                    'icon-opacity': 0.8,
                 },
+                'layout': {
+                    'icon-image': 'warehouse'
+                }
             }
         } 
     }
@@ -126,11 +127,13 @@ export default function CIMap() {
     var interactiveLayerIds = [];
 
     for (const [layerID, { layer, interactive, style }] of Object.entries(layers)) {
+        var layerStyle = deepMerge(style, { layout: { visibility: layersVisibility[layerID] } })
+
         mapLayers.push(
             <Source key={layerID} type="geojson" data={layer}>
                 <Layer key={layerID}
-                    {...style}
-                    layout={{ visibility: layersVisibility[layerID] }} />
+                    {...layerStyle}
+                />
             </Source>
         )
         if (interactive) {
