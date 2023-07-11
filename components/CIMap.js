@@ -12,7 +12,6 @@ import protectedSegments from '/public/static/gis/protected-segments.geojson'
 import majorRoads from '/public/static/gis/major-roads.geojson'
 import ltns from '/public/static/gis/islington-ltns-post-2020.geojson'
 import hubs from '/public/static/gis/logistics-hubs.geojson'
-import WarehouseIcon from '@mui/icons-material/Warehouse';
 
 export default function CIMap() {
     const layers = {
@@ -140,8 +139,8 @@ export default function CIMap() {
     return (
         <Map
             initialViewState={{
-                longitude: -0.114835,
-                latitude: 51.545553,
+                longitude: -0.10,
+                latitude: 51.548,
                 zoom: 11.5
             }}
             style={{ width: "100%", height: 400 }}
