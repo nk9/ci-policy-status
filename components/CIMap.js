@@ -84,7 +84,7 @@ export default function CIMap() {
                 'id': 'protectedSegmentsHover',
                 'type': 'line',
                 'paint': {
-                    'line-width': 10,
+                    'line-width': 15,
                     'line-opacity': 0
                 }
             }
