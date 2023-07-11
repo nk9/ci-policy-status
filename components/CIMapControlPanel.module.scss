@@ -26,6 +26,18 @@
 
 @media (max-width: 768px) {
   .control-panel {
-    width: 6rem;
+    width: 6.5rem;
   }
+}
+
+.swatch {
+  height: 2px;
+  width: 14px;
+  display: inline-block;
+  margin-right: 11px;
+  position: relative;
+  bottom: 3px;
+  left: 4px;
+  border-width: 2px;
+  border-style: solid;
 }

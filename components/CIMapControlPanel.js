@@ -2,6 +2,25 @@ import React, { useState, useEffect } from "react";
 import styles from "./CIMapControlPanel.module.scss";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
+import {
+    Accordion,
+    AccordionDetails,
+    AccordionSummary,
+    Typography,
+} from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { styled } from '@mui/material/styles';
+
+const CustomAccordion = styled(Accordion)(({ theme }) => {
+    return {
+        boxShadow: 'none',
+        border: `0`,
+        '.MuiAccordionDetails-root': { padding: 0 },
+        '.MuiAccordionSummary-root': { padding: 0, minHeight: "2rem" },
+        '.MuiAccordionSummary-content': { margin: 0 },
+    };
+});
+
 const hideableLayers = {
     'protectedSegments': { fullName: "Protected Tracks", shortName: "Tracks" },
     'majorRoads': { fullName: "Major Roads", shortName: "Roads" },
@@ -37,11 +56,20 @@ function ControlPanel({ layers, onChange }) {
         setVisibility(newVisibility);
     };
     
-    const useShortName = useMediaQuery('(max-width: 768px)');
+    const isMobile = useMediaQuery('(max-width: 768px)');
+
+    const legend = (color, title, shortTitle, isDashed = false) => (
+        <Typography variant="body1">
+            <div className={styles["swatch"]} style={{
+                borderColor: color,
+                borderStyle: isDashed ? "dashed" : "solid"
+            }}></div>
+            {isMobile ? shortTitle : title}
+        </Typography>)
 
     return (
         <div className={styles["control-panel"]}>
-            <h3>Layers</h3>
+            <Typography variant="h3">Layers</Typography>
             {Object.entries(hideableLayers).map(([layerID, { fullName, shortName }]) => (
                 <div key={layerID} className="input">
                     <input
@@ -50,9 +78,26 @@ function ControlPanel({ layers, onChange }) {
                         checked={visibility[layerID]}
                         onChange={evt => onVisibilityChange(layerID, evt.target.checked)}
                     />
-                    <label htmlFor={layerID}>{useShortName ? shortName : fullName}</label>
+                    <label htmlFor={layerID}>{isMobile ? shortName : fullName}</label>
                 </div>
             ))}
+            <div> {/*Remove top line*/}
+                <CustomAccordion disableGutters={true}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        sx={{ flexDirection: "row-reverse" }}
+                    >
+                        <Typography variant="body1" mb={0} style={{ fontWeight: 'bold' }}>Legend</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        {legend('#000', 'TfL Road', 'TfL Rd')}
+                        {legend('#B0B0B0', 'Council Road', 'LBI Rd')}
+                        {legend('#411AFF', 'TfL Track', 'TfL Trk')}
+                        {legend('#13941A', 'Council Track', 'LBI Trk')}
+                        {legend('#13941A', 'Unidirectional Track', 'Unidir.', true)}
+                    </AccordionDetails>
+                </CustomAccordion>
+            </div>
         </div>
     );
 }

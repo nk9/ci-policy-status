@@ -8,7 +8,7 @@ import {
 
 export default function ({ target_name, targets, image, body }) {
     return (
-        <Accordion disableGutters={true}>
+        <Accordion className={"ask-accordion"} disableGutters={true}>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 sx={{ flexDirection: "row-reverse" }}
