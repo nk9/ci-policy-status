@@ -46,7 +46,7 @@ export default function Home() {
                     Islington Labour pledged to ensure that "local people can get on their bike and get cycling safely around Islington."
                 </Typography>
 
-                <Typography variant="body1" mt={2}>We are tracking the Council's progress toward this commitment. Here is our assessmentof their progress so far.</Typography>
+                <Typography variant="body1" mt={2}>We are tracking the Council's progress toward this commitment. Here is our assessment of their progress so far.</Typography>
             </Box>
 
             {header("1. Sustainable Transport Modal Share")}
@@ -55,6 +55,14 @@ export default function Home() {
                 target_name="Modal Share"
                 targets={["85%", "85%", "90%"]}
                 body={<>
+                    <Image
+                        src="/static/images/modal-share.jpg"
+                        layout="intrinsic"
+                        width="900"
+                        height="200"
+                        alt="Two people on a bicycle in front of a red bus."
+                    />
+
                     <Typography variant="body1">TfL publishes yearly figures about how people are getting around the capital. This lets us determine how many journeys are made with sustainable modes (Tube, bus, walking, cycling, etc) and all others (e.g. private car). The most recent survey available is from 2021, and it showed that Islington has a <Link href="https://www.healthystreetsscorecard.london/results/results_outcome_indicators/#ResultsModeshare">sustainable modal share of 85%</Link>.</Typography>
                     <Typography variant="body1">Every borough needs to do their part to meet overall climate targets. Fortunately, here in Islington, there are still many opportunities increase the share of trips made without a private car.</Typography>
                 </>}
@@ -68,7 +76,7 @@ export default function Home() {
                     width="900"
                     height="200"
                     alt="Cyclists and pedestrians share a wide road next to Highbury Fields." />}
-                body={<Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable transport modal share as measured by TfL from 2041 to 2030. They pledged to “continue to work to increase the sustainable modal share”.</Typography>}
+                body={<Typography variant="body1">We have asked the Council to bring forward the target date for reaching 90% sustainable transport modal share as measured by TfL from 2041 to 2030. The <Link href="https://www.islington.gov.uk/~/media/sharepoint-lists/public-records/transportandinfrastructure/information/adviceandinformation/20222023/islington-transport-strategy-2021-monitoring-report.pdf">Islington Transport Strategy Monitoring Report 2021</Link> lays out the goals and tracks progress.</Typography>}
             />
 
             {header("2. Low-Traffic Neighbourhoods")}
@@ -87,6 +95,7 @@ export default function Home() {
                     <>
                         <Typography variant="body1">Low-Traffic Neighbourhoods make it both appealing and possible for the broadest number of people to get around without a car. Academic research has shown that <Link href="https://www.healthystreetsscorecard.london/imperial-college-londons-ltn-air-quality-study/">low-traffic streets improve overall air quality</Link> and <Link href="https://www.theguardian.com/world/2021/jul/23/low-traffic-schemes-halve-number-of-road-injuries-study-shows">reduce road danger</Link>.</Typography>
                         <Typography variant="body1">Islington has already determined that <Link href="https://www.islington.gov.uk/~/media/sharepoint-lists/public-records/energyservices/businessplanning/strategies/20202021/20201209vision2030islingtonzerocarbonstrategy1.pdf">100% of its transport emissions must be removed</Link> to meet its aggressive <Link href="https://www.islington.gov.uk/environment-and-energy/climate-emergency">Net Zero by 2030</Link> goals. Since the easiest, cheapest, and most equitable way to reach a low-carbon future is to reduce traffic, we asked the Council to cover the borough with Low-Traffic Neighbourhoods by 2024.</Typography>
+                        <Typography variant="body1">You can learn more about the Council’s implemented <Link href="https://www.islington.gov.uk/roads/people-friendly-streets/low-traffic-neighbourhoods">Low-Traffic Neighbourhoods</Link>, as well as the new crop of <Link href="https://www.islington.gov.uk/roads/people-friendly-streets/liveable-neighbourhoods">Liveable Neighbourhoods</Link> that are being developed.</Typography>
                     </>
                 }
             />
