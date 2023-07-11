@@ -95,10 +95,6 @@ export default function CIMap() {
             style: {
                 'id': 'hubs',
                 'type': 'symbol',
-                'paint': {
-                    'icon-color': "red",
-                    'icon-opacity': 0.8,
-                },
                 'layout': {
                     'icon-image': 'warehouse'
                 }
