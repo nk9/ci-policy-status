@@ -60,10 +60,10 @@ function ControlPanel({ layers, onChange }) {
 
     const legend = (color, title, shortTitle, isDashed = false) => (
         <Typography variant="body1">
-            <div className={styles["swatch"]} style={{
+            <span className={styles["swatch"]} style={{
                 borderColor: color,
                 borderStyle: isDashed ? "dashed" : "solid"
-            }}></div>
+            }}></span>
             {isMobile ? shortTitle : title}
         </Typography>)
 
