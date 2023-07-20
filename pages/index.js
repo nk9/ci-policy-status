@@ -10,7 +10,6 @@ import logo from "/public/static/images/circle.svg";
 
 import {
     Box,
-    Button,
     Container,
     Typography,
     Toolbar,
@@ -22,9 +21,9 @@ export default function Home() {
             <Box className={styles.section_header} sx={{ position: "relative" }}>
                 {title}
                 <Box sx={{ display: 'flex', position: 'absolute', right: '0', bottom: '0', pr: 1.5 }}>
-                    <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>2022</Typography>
-                    <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold' }}>Now</Typography>
-                    <Typography sx={{ width: '45px', flexShrink: 0, justifyContent: 'space-between', fontWeight: 'bold', }}>Ask</Typography>
+                    <Typography className={styles.stats_header}>2022</Typography>
+                    <Typography className={styles.stats_header}>Now</Typography>
+                    <Typography className={styles.stats_header}>Ask</Typography>
                 </Box >
             </Box>
         )
@@ -33,7 +32,7 @@ export default function Home() {
     return (
         <>
             <Toolbar className={styles.toolbar}>
-                <div style={{ display: "flex", alignItems: "center", marginRight: "1rem" }}>
+                <div className={styles.masthead_container} >
                     <Link href="https://cycleislington.uk" className={styles.icon} >
                         <FutureImage src={logo} width="48" height="48" />
                     </Link>
@@ -43,7 +42,7 @@ export default function Home() {
                 </div>
             </Toolbar>
 
-            <Container maxWidth="md" sx={{ px: 0 }} className='hagrid'>
+            <Container maxWidth="md" sx={{ px: 0 }}>
                 <Box sx={{ my: 4, px: 2 }}>
                     <Typography variant="h3" gutterBottom>
                         Tracking Our Five Asks

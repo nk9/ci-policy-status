@@ -8,6 +8,18 @@ $lcc-red: #E30614;
     color: white;
 }
 
+.stats_header {
+    width: 45px;
+    flex-shrink: 0;
+    justify-content: space-between;
+    font-weight: bold
+}
+
+.masthead_container {
+    display: flex;
+    align-items: center;
+}
+
 .toolbar {
     font-size: 24pt;
     background: $lcc-red;
@@ -20,6 +32,6 @@ $lcc-red: #E30614;
 
     a.icon {
         line-height: 0;
-        padding-right: 1rem;
+        padding-right: .5rem;
     }
 }
