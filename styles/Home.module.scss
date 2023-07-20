@@ -1,7 +1,25 @@
+$lcc-red: #E30614;
+
 .section_header {
     padding: 1rem;
     font-size: 18pt;
     font-weight: bold;
-    background: #E30614;
+    background: $lcc-red;
     color: white;
+}
+
+.toolbar {
+    font-size: 24pt;
+    background: $lcc-red;
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Playfair Display', serif;
+    }
+
+    a.icon {
+        line-height: 0;
+        padding-right: 1rem;
+    }
 }
