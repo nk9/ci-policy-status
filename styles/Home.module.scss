@@ -12,12 +12,16 @@ $lcc-red: #E30614;
     width: 45px;
     flex-shrink: 0;
     justify-content: space-between;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .masthead_container {
     display: flex;
     align-items: center;
+
+    a:hover {
+        color: white;
+    }
 }
 
 .toolbar {
