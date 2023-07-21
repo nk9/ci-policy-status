@@ -69,7 +69,7 @@ function ControlPanel({ layers, onChange }) {
 
     return (
         <div className={styles["control-panel"]}>
-            <Typography variant="h3">Layers</Typography>
+            <Typography variant="body1" style={{ fontWeight: 'bold' }}>Layers</Typography>
             {Object.entries(hideableLayers).map(([layerID, { fullName, shortName }]) => (
                 <div key={layerID} className="input">
                     <input

@@ -183,7 +183,7 @@ function preparePopover(hoverInfo, feature, styles) {
             }
             break;
         case "ltns":
-            headline = "Healthy Neighbourhood"
+            headline = "Low-Traffic Neighbourhood"
             infoPairs = {
                 "Name": props.Name,
                 "Area": props.area.toFixed() + "ha",
