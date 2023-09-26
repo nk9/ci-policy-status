@@ -31,7 +31,7 @@ const hideableLayers = {
 // When the hideable layer above has its visibility toggled, also
 // toggle this other layer
 const pairedLayers = {
-    'protectedSegments': 'protectedSegmentsHover'
+    'protectedSegments': ['protectedSegmentsHover']
 }
 
 function ControlPanel({ layers, onChange }) {
@@ -51,7 +51,9 @@ function ControlPanel({ layers, onChange }) {
         var newVisibility = { ...visibility, [name]: value }
 
         if (Object.hasOwn(pairedLayers, name)) {
-            newVisibility[pairedLayers[name]] = value
+            for (const layerID of pairedLayers[name]) {
+                newVisibility[layerID] = value
+            }
         }
 
         setVisibility(newVisibility);
