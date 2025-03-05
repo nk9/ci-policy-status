@@ -1,18 +1,14 @@
-import * as React from 'react';
-import styles from "/styles/Home.module.scss";
 import Image from 'next/image';
 import Link from '../src/Link';
-import FutureImage from 'next/future/image';
+import styles from "/styles/Home.module.scss";
 
-import CIMap from '../components/CIMap';
 import CIAsk from '../components/CIAsk';
+import CIMap from '../components/CIMap';
 import logo from "/public/static/images/circle.svg";
 
 import {
     Box,
-    Container,
-    Typography,
-    Toolbar,
+    Container, Toolbar, Typography
 } from "@mui/material";
 
 export default function Home() {
@@ -34,7 +30,7 @@ export default function Home() {
             <Toolbar className={styles.toolbar}>
                 <div className={styles.masthead_container} >
                     <Link href="https://cycleislington.uk" className={styles.icon} >
-                        <FutureImage src={logo} width="48" height="48" />
+                        <Image src={logo} width="48" height="48" />
                     </Link>
                     <Link href="https://cycleislington.uk">
                         Cycle Islington
