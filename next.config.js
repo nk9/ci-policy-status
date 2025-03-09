@@ -1,11 +1,9 @@
+const nextConfig = {
+  output: 'export',
+};
+
 module.exports = {
   reactStrictMode: true,
-  
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
 
   webpack: (config) => {
     config.module.rules.push({
