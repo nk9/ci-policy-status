@@ -3,7 +3,7 @@ import * as React from 'react';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import {
-    Accordion, AccordionSummary, AccordionDetails, Typography
+    Accordion, AccordionDetails, AccordionSummary, Typography
 } from "@mui/material";
 
 export default function ({ target_name, targets, image, body }) {
