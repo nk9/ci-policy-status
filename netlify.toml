@@ -3,8 +3,8 @@ command = "npm run build"
 publish = ".next"
 
 [[redirects]]
-    from = "/static/images/kids.jpg"
-    to = "/static/images/kids.jpg"
+    from = "/images/kids.jpg"
+    to = "/images/kids.jpg"
     status = 200
 
 [[redirects]]
