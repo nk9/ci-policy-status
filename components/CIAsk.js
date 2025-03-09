@@ -13,8 +13,8 @@ export default function ({ target_name, targets, image, body }) {
                 expandIcon={<ExpandMoreIcon />}
                 sx={{ flexDirection: "row-reverse" }}
             >
-                <Typography sx={{ flex: 1 }}>{target_name}</Typography>
-                {React.Children.toArray(targets.map((t) => <Typography sx={{ width: '45px', flexShrink: 0, textAlign: 'center' }}>{t}</Typography>))}
+                <Typography key="target-title" sx={{ flex: 1 }}>{target_name}</Typography>
+                {React.Children.toArray(targets.map((t, i) => <Typography key={`target-stat-${i}`} sx={{ width: '45px', flexShrink: 0, textAlign: 'center' }}>{t}</Typography>))}
             </AccordionSummary>
             <AccordionDetails>
                 {image ?? null}
