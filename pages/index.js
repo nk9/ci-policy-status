@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Link from '../src/Link';
 import styles from "/styles/Home.module.scss";
 
