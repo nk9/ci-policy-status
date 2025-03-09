@@ -16,6 +16,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu%3A300%2C400%2C400i%2C700%7CPlayfair+Display&ver=6.1.3#038;display=fallback" />
           <meta name="emotion-insertion-point" content="" />
           {this.props.emotionStyleTags}
         </Head>

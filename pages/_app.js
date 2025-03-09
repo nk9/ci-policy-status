@@ -19,7 +19,6 @@ export default function MyApp(props) {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu%3A300%2C400%2C400i%2C700%7CPlayfair+Display&ver=6.1.3#038;display=fallback" />
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
